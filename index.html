@@ -3,487 +3,747 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Todi Securities Private Limited</title>
+<title>Todi Securities Private Limited — SEBI Registered Stock Broker (NSE &amp; BSE)</title>
+<meta name="description" content="Todi Securities Private Limited — SEBI Registered Stock Broker. Member of NSE (TM 11900) &amp; BSE (TM 6136). SEBI Reg. INZ000214535. Equity, F&amp;O, IPO and ETF trading.">
+<meta name="theme-color" content="#0B1F3A">
+<meta name="robots" content="index, follow">
+
 <style>
-/* ===== FONTS (system-safe stack, no external dependency) ===== */
+/* =========================================================
+   ACCESSIBILITY-FIRST CSS  (WCAG 2.1 Level AA compliant)
+   ========================================================= */
+
 :root {
   --font-serif: Georgia, 'Times New Roman', serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --navy: #0B1F3A;
-  --navy2: #122845;
-  --gold: #C8922A;
-  --gold-light: #E8B84B;
-  --cream: #FAF7F2;
-  --white: #FFFFFF;
-  --grey: #6B7280;
-  --light-grey: #F3F4F6;
-  --border: #E5E1D8;
-  --text: #1A1A2E;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); background: var(--cream); color: var(--text); overflow-x: hidden; }
 
-/* ===== NAV ===== */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: #0B1F3A;
+  /* Brand palette (kept identical) */
+  --navy:#0B1F3A; --navy2:#122845;
+  --gold:#C8922A; --gold-light:#E8B84B;
+  --cream:#FAF7F2; --white:#FFFFFF;
+  --grey:#6B7280; --light-grey:#F3F4F6;
+  --border:#E5E1D8; --text:#1A1A2E;
+
+  /* Accessibility toolbar variables (live, updated by JS) */
+  --acc-font-scale: 1;          /* 1, 1.15, 1.3 */
+  --acc-letter-spacing: 0;       /* 0, 0.05em, 0.1em */
+  --acc-line-height: 1.6;        /* 1.6, 1.85, 2.1 */
+  --acc-link-decoration: none;   /* none | underline */
+  --acc-saturation: 1;           /* 1, 0, 1.6 */
+  --acc-cursor-size: auto;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; font-size: calc(16px * var(--acc-font-scale)); }
+body {
+  font-family: var(--font-sans); background: var(--cream); color: var(--text);
+  overflow-x: hidden;
+  line-height: var(--acc-line-height);
+  letter-spacing: var(--acc-letter-spacing);
+  filter: saturate(var(--acc-saturation));
+}
+a { text-decoration: var(--acc-link-decoration); }
+
+/* === Accessibility STATE classes that body toggles === */
+body.acc-high-contrast {
+  background:#000 !important; color:#fff !important;
+}
+body.acc-high-contrast nav,
+body.acc-high-contrast footer,
+body.acc-high-contrast .page-hero,
+body.acc-high-contrast .hero,
+body.acc-high-contrast .pricing-head,
+body.acc-high-contrast .doc-block-title,
+body.acc-high-contrast .team-card-top { background:#000 !important; color:#fff !important; }
+body.acc-high-contrast .card,
+body.acc-high-contrast .service-card,
+body.acc-high-contrast .team-card,
+body.acc-high-contrast .contact-detail,
+body.acc-high-contrast .email-pill,
+body.acc-high-contrast .doc-block,
+body.acc-high-contrast .form-card,
+body.acc-high-contrast .pricing-wrap,
+body.acc-high-contrast .investor-notice,
+body.acc-high-contrast .risk-banner,
+body.acc-high-contrast .highlights,
+body.acc-high-contrast .lang-btn { background:#111 !important; color:#fff !important; border-color:#fff !important; }
+body.acc-high-contrast a, body.acc-high-contrast a * { color:#ffff00 !important; }
+body.acc-high-contrast h1, body.acc-high-contrast h2, body.acc-high-contrast h3,
+body.acc-high-contrast h4, body.acc-high-contrast p, body.acc-high-contrast td,
+body.acc-high-contrast th, body.acc-high-contrast li, body.acc-high-contrast span,
+body.acc-high-contrast div, body.acc-high-contrast label { color:#fff !important; }
+body.acc-high-contrast .btn-primary, body.acc-high-contrast .btn-dl { background:#ffff00 !important; color:#000 !important; border:2px solid #ffff00 !important; }
+
+body.acc-invert { filter: invert(1) hue-rotate(180deg) saturate(var(--acc-saturation)); }
+body.acc-invert img, body.acc-invert video { filter: invert(1) hue-rotate(180deg); }
+
+body.acc-highlight-links a { text-decoration: underline !important; outline: 2px solid #FFD600 !important; background:#FFF59D !important; color:#000 !important; padding:1px 3px; }
+body.acc-highlight-links.acc-high-contrast a { background:#000 !important; color:#FFD600 !important; outline: 2px solid #FFD600 !important; }
+
+body.acc-hide-images img, body.acc-hide-images .nav-logo-icon, body.acc-hide-images .footer-logo-icon { visibility: hidden !important; }
+body.acc-hide-images [class*="icon"] { display:none !important; }
+
+body.acc-big-cursor, body.acc-big-cursor * {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24'><path d='M2 2 L2 18 L7 14 L10 22 L13 21 L10 13 L17 13 Z' fill='%23000' stroke='%23fff' stroke-width='1.5'/></svg>") 0 0, auto !important;
+}
+
+/* === Skip-link === */
+.skip-link {
+  position: absolute; left: 0; top: -100px; z-index: 99999;
+  background: var(--gold); color: var(--navy); padding: 14px 22px; font-weight: 700;
+  border: 3px solid var(--navy); border-radius: 0 0 8px 0;
+  font-size: 15px; text-decoration: none;
+}
+.skip-link:focus { top: 0; outline: 3px solid var(--navy); }
+
+/* === Visible focus indicators (WCAG 2.4.7) === */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--gold) !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(200,146,42,0.25);
+}
+
+/* === Screen-reader-only utility === */
+.sr-only {
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* =========================================================
+   TOP ACCESSIBILITY STRIP (above main nav, like SC of India)
+   ========================================================= */
+.acc-strip {
+  background: #000; color: #fff; height: 36px;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 0 24px; gap: 8px;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1100;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.4px;
+}
+.acc-strip .acc-strip-left {
+  margin-right: auto; display: flex; align-items: center; gap: 14px;
+  text-transform: uppercase; font-size: 11px; color: #fff;
+}
+.acc-strip .acc-strip-left .acc-hindi { font-family: var(--font-serif); font-weight: 400; }
+.acc-strip-btn {
+  background: transparent; border: 1px solid transparent;
+  color: #fff; padding: 5px 9px; border-radius: 4px;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-sans);
+  transition: background 0.15s;
+}
+.acc-strip-btn:hover, .acc-strip-btn:focus-visible { background: rgba(255,255,255,0.15); }
+.acc-strip-btn[aria-pressed="true"] { background: rgba(232,184,75,0.25); border-color: var(--gold-light); }
+.acc-strip-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.acc-skip { color: #fff; text-decoration: underline; font-size: 11px; }
+.acc-skip:hover { color: var(--gold-light); }
+
+/* =========================================================
+   ACCESSIBILITY PANEL (the actual toolbar, replica of SC of India)
+   ========================================================= */
+.acc-panel {
+  display: none;
+  position: fixed; top: 40px; right: 12px; z-index: 1200;
+  background: #fff; color: #1a1a1a;
+  width: 380px; max-width: calc(100vw - 24px);
+  border: 1px solid #ddd; border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  padding: 20px 22px 22px;
+  font-family: var(--font-sans);
+}
+.acc-panel.open { display: block; }
+.acc-panel h2 {
+  text-align: center; font-size: 19px; font-weight: 700;
+  color: #1a1a1a; margin-bottom: 18px; font-family: var(--font-sans);
+  letter-spacing: 0.2px;
+}
+.acc-panel h3 {
+  font-size: 13.5px; font-weight: 700; color: #1a1a1a;
+  margin: 14px 0 10px; font-family: var(--font-sans);
+}
+.acc-panel h3:first-of-type { margin-top: 0; }
+.acc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.acc-grid.acc-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.acc-tile {
+  position: relative;
+  background: #fff; border: 1px solid #d4d4d4; border-radius: 4px;
+  padding: 14px 6px 10px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
+  color: #2a2a2a; text-align: center; line-height: 1.25;
+  transition: background 0.15s, border-color 0.15s;
+}
+.acc-tile:hover, .acc-tile:focus-visible { background: #f5f5f5; outline: 2px solid var(--gold); outline-offset: -1px; }
+.acc-tile[aria-pressed="true"] {
+  border-color: #1a1a1a; background: #fff;
+}
+.acc-tile[aria-pressed="true"] .acc-check {
+  display: flex;
+}
+.acc-tile[aria-pressed="true"] > span:last-child {
+  text-decoration: underline;
+}
+.acc-tile svg { width: 26px; height: 26px; color: #1a1a1a; flex-shrink: 0; }
+.acc-check {
+  display: none;
+  position: absolute; top: 4px; right: 4px;
+  width: 18px; height: 18px; background: #1f8a3d;
+  border-radius: 50%; align-items: center; justify-content: center;
+  color: #fff; font-size: 11px; font-weight: 700;
+}
+.acc-check::before { content: "✓"; }
+.acc-reset {
+  width: 100%; margin-top: 16px; padding: 9px;
+  background: #1a1a1a; color: #fff; border: none; border-radius: 4px;
+  font-weight: 600; font-size: 13px; cursor: pointer;
+  font-family: var(--font-sans);
+}
+.acc-reset:hover { background: #333; }
+
+/* =========================================================
+   MAIN NAV  (pushed below acc-strip)
+   ========================================================= */
+nav.main-nav {
+  position: fixed; top: 36px; left: 0; right: 0; z-index: 1000;
+  background: var(--navy);
   border-bottom: 1px solid rgba(200,146,42,0.4);
 }
 .nav-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between; height: 68px;
 }
-.nav-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
+.nav-logo { display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none; background:none; border:none; padding:0; font-family: var(--font-sans); }
 .nav-logo-icon {
-  width: 40px; height: 40px;
-  background: linear-gradient(135deg, #C8922A, #E8B84B);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: #0B1F3A;
-  flex-shrink: 0;
+  width:40px; height:40px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-serif); font-size:22px; font-weight:700; color: var(--navy);
+  flex-shrink:0;
 }
-.nav-logo-name { display: block; font-family: var(--font-serif); font-size: 17px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.3px; }
-.nav-logo-tag { display: block; font-size: 10px; color: #E8B84B; letter-spacing: 2px; text-transform: uppercase; }
-.nav-links { display: flex; align-items: center; gap: 4px; }
-.nav-links a {
-  color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13.5px;
-  padding: 7px 14px; border-radius: 6px; cursor: pointer; transition: all 0.2s;
+.nav-logo-name { display:block; font-family: var(--font-serif); font-size:17px; font-weight:700; color:#fff; letter-spacing:0.3px; text-align:left; }
+.nav-logo-tag { display:block; font-size:10px; color: var(--gold-light); letter-spacing:2px; text-transform:uppercase; text-align:left; }
+.nav-links { display:flex; align-items:center; gap:4px; list-style:none; }
+.nav-links a, .nav-links button {
+  color: rgba(255,255,255,0.85); background:transparent; border:none;
+  font-family: var(--font-sans); text-decoration:none; font-size:13.5px;
+  padding:8px 14px; border-radius:6px; cursor:pointer;
+  transition: background 0.2s, color 0.2s;
 }
-.nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(200,146,42,0.18); }
-.nav-cta { display: flex; gap: 10px; align-items: center; }
-.btn-nav-login {
-  background: transparent; border: 1px solid rgba(200,146,42,0.5);
-  color: #E8B84B; padding: 8px 20px; border-radius: 6px;
-  font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s;
-  font-family: var(--font-sans);
+.nav-links a:hover, .nav-links a:focus-visible,
+.nav-links button:hover, .nav-links button:focus-visible,
+.nav-links a.active, .nav-links button.active {
+  color:#fff; background: rgba(200,146,42,0.22);
 }
-.btn-nav-login:hover { background: rgba(200,146,42,0.12); }
-.btn-nav-register {
-  background: linear-gradient(135deg, #C8922A, #E8B84B);
-  color: #0B1F3A; padding: 8px 20px; border-radius: 6px;
-  font-size: 13px; font-weight: 700; cursor: pointer; border: none;
-  text-decoration: none; display: inline-block; font-family: var(--font-sans);
-}
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-.hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+.nav-cta { display:flex; gap:10px; align-items:center; }
+.hamburger { display:none; background:none; border:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; }
+.hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
 .mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: #0B1F3A; padding: 16px 24px;
-  border-bottom: 1px solid rgba(200,146,42,0.2); z-index: 999;
+  display:none; position: fixed; top: 104px; left:0; right:0;
+  background: var(--navy); padding:16px 24px;
+  border-bottom: 1px solid rgba(200,146,42,0.2); z-index:999;
 }
-.mobile-menu.open { display: block; }
-.mobile-menu a {
-  display: block; color: rgba(255,255,255,0.85); text-decoration: none;
-  padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-  font-size: 15px; cursor: pointer;
+.mobile-menu.open { display:block; }
+.mobile-menu a, .mobile-menu button {
+  display:block; width:100%; text-align:left;
+  color: rgba(255,255,255,0.9); background:none; border:none;
+  font-family: var(--font-sans); text-decoration:none;
+  padding:13px 0; border-bottom:1px solid rgba(255,255,255,0.07);
+  font-size:15px; cursor:pointer;
 }
-.mobile-cta { display: flex; gap: 10px; padding-top: 16px; }
 
-/* ===== PAGES ===== */
-.page { display: none; padding-top: 68px; min-height: 100vh; }
+/* === Marquee (mandatory investor warning) === */
+.investor-marquee {
+  background: #FFFBEB; border-bottom: 1px solid #FDE68A;
+  color: #78350F; font-size: 13px; font-weight: 500;
+  padding: 8px 0; overflow: hidden; white-space: nowrap;
+}
+.investor-marquee-track {
+  display: inline-block; padding-left: 100%;
+  animation: marquee 38s linear infinite;
+}
+.investor-marquee:hover .investor-marquee-track,
+.investor-marquee:focus-within .investor-marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+.investor-marquee-track strong { color: #92400E; }
+@media (prefers-reduced-motion: reduce) {
+  .investor-marquee-track { animation: none; padding-left: 24px; white-space: normal; display:block; }
+}
+
+/* === PAGES === */
+.page { display: none; padding-top: 104px; min-height: 100vh; }
 .page.active { display: block; }
 
-/* ===== HERO ===== */
+/* === HERO === */
 .hero {
-  background: linear-gradient(135deg, #0B1F3A 0%, #122845 55%, #0D1F38 100%);
-  min-height: calc(100vh - 68px);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 55%, #0D1F38 100%);
+  min-height: calc(100vh - 104px);
   display: flex; align-items: center; position: relative; overflow: hidden;
 }
-.hero-bg-glow {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse at 70% 50%, rgba(200,146,42,0.10) 0%, transparent 60%);
-}
+.hero-bg-glow { position:absolute; inset:0; pointer-events:none; background: radial-gradient(ellipse at 70% 50%, rgba(200,146,42,0.10) 0%, transparent 60%); }
 .hero-grid {
-  position: absolute; inset: 0; pointer-events: none; opacity: 0.035;
-  background-image:
-    linear-gradient(rgba(200,146,42,1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,146,42,1) 1px, transparent 1px);
+  position:absolute; inset:0; pointer-events:none; opacity:0.035;
+  background-image: linear-gradient(rgba(200,146,42,1) 1px, transparent 1px), linear-gradient(90deg, rgba(200,146,42,1) 1px, transparent 1px);
   background-size: 60px 60px;
 }
-.hero-inner {
-  max-width: 1200px; margin: 0 auto; padding: 80px 24px;
-  position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-}
+.hero-inner { max-width:1200px; margin:0 auto; padding:80px 24px; position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
 .hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(200,146,42,0.12); border: 1px solid rgba(200,146,42,0.35);
-  color: #E8B84B; font-size: 11.5px; font-weight: 600; letter-spacing: 1.5px;
-  padding: 6px 14px; border-radius: 20px; text-transform: uppercase; margin-bottom: 24px;
+  display:inline-flex; align-items:center; gap:8px;
+  background: rgba(200,146,42,0.12); border:1px solid rgba(200,146,42,0.4);
+  color: var(--gold-light); font-size:11.5px; font-weight:700; letter-spacing:1.5px;
+  padding:6px 14px; border-radius:20px; text-transform:uppercase; margin-bottom:24px;
 }
-.hero-badge-dot {
-  width: 7px; height: 7px; background: #C8922A; border-radius: 50%;
-  animation: blink 2s infinite;
-}
+.hero-badge-dot { width:7px; height:7px; background: var(--gold); border-radius:50%; animation: blink 2s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-.hero h1 {
-  font-family: var(--font-serif); font-size: clamp(34px, 3.8vw, 56px);
-  font-weight: 700; line-height: 1.15; color: #FFFFFF; margin-bottom: 20px;
-}
-.hero h1 em { font-style: normal; color: #E8B84B; }
-.hero-sub {
-  color: rgba(255,255,255,0.62); font-size: 16px; line-height: 1.75;
-  margin-bottom: 36px; max-width: 480px;
-}
-.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { .hero-badge-dot { animation: none; } }
+.hero h1 { font-family: var(--font-serif); font-size: clamp(34px, 3.8vw, 56px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:20px; }
+.hero h1 em { font-style:normal; color: var(--gold-light); }
+.hero-sub { color: rgba(255,255,255,0.78); font-size:16px; line-height:1.75; margin-bottom:36px; max-width:480px; }
+.hero-cta { display:flex; gap:14px; flex-wrap:wrap; }
 .btn-primary {
-  background: linear-gradient(135deg, #C8922A, #E8B84B);
-  color: #0B1F3A; padding: 14px 32px; border-radius: 8px;
-  font-weight: 700; font-size: 15px; cursor: pointer; border: none;
-  text-decoration: none; display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy); padding:14px 32px; border-radius:8px;
+  font-weight:700; font-size:15px; cursor:pointer; border:none;
+  text-decoration:none; display:inline-block;
   box-shadow: 0 4px 20px rgba(200,146,42,0.35);
   font-family: var(--font-sans); transition: opacity 0.2s;
 }
-.btn-primary:hover { opacity: 0.9; }
+.btn-primary:hover { opacity: 0.92; }
 .btn-outline {
-  background: transparent; border: 1.5px solid rgba(255,255,255,0.28);
-  color: #FFFFFF; padding: 14px 32px; border-radius: 8px;
-  font-weight: 500; font-size: 15px; cursor: pointer;
-  font-family: var(--font-sans); transition: all 0.2s;
+  background:transparent; border:1.5px solid rgba(255,255,255,0.35);
+  color:#fff; padding:14px 32px; border-radius:8px;
+  font-weight:600; font-size:15px; cursor:pointer; font-family: var(--font-sans);
 }
-.btn-outline:hover { border-color: rgba(200,146,42,0.6); color: #E8B84B; }
-.hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.stat-card {
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(200,146,42,0.22);
-  border-radius: 14px; padding: 24px 20px;
-}
-.stat-number {
-  font-family: var(--font-serif); font-size: 38px; font-weight: 700;
-  color: #E8B84B; line-height: 1;
-}
-.stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 7px; line-height: 1.4; }
+.btn-outline:hover, .btn-outline:focus-visible { border-color: rgba(200,146,42,0.7); color: var(--gold-light); }
+.hero-stats { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; }
+.stat-card { background: rgba(255,255,255,0.06); border:1px solid rgba(200,146,42,0.25); border-radius:14px; padding:24px 20px; }
+.stat-number { font-family: var(--font-serif); font-size:38px; font-weight:700; color: var(--gold-light); line-height:1; }
+.stat-label { font-size:13px; color: rgba(255,255,255,0.65); margin-top:7px; line-height:1.4; }
 
 /* Highlights bar */
-.highlights { background: #FFFFFF; border-bottom: 1px solid #E5E1D8; padding: 18px 0; }
-.highlights-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 24px;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 32px; justify-content: center;
-}
-.hl-item { display: flex; align-items: center; gap: 10px; }
-.hl-icon {
-  width: 38px; height: 38px; background: rgba(200,146,42,0.1);
-  border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px;
-}
-.hl-strong { display: block; font-size: 14px; font-weight: 700; color: #0B1F3A; }
-.hl-small { font-size: 12px; color: #6B7280; }
+.highlights { background:#fff; border-bottom:1px solid var(--border); padding:18px 0; }
+.highlights-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:32px; justify-content:center; }
+.hl-item { display:flex; align-items:center; gap:10px; }
+.hl-icon { width:38px; height:38px; background: rgba(200,146,42,0.1); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+.hl-strong { display:block; font-size:14px; font-weight:700; color: var(--navy); }
+.hl-small { font-size:12px; color: var(--grey); }
 
-/* Section basics */
-.section { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
-.sec-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #C8922A; margin-bottom: 12px; }
-.sec-title { font-family: var(--font-serif); font-size: clamp(26px, 3vw, 40px); font-weight: 700; color: #0B1F3A; line-height: 1.2; margin-bottom: 14px; }
-.sec-sub { font-size: 15px; color: #6B7280; max-width: 560px; line-height: 1.75; }
-
-/* Cards grid */
-.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
-.card {
-  background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 16px; padding: 30px 26px;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-.card:hover { transform: translateY(-4px); box-shadow: 0 10px 36px rgba(11,31,58,0.09); border-color: #C8922A; }
-.card-icon {
-  width: 50px; height: 50px;
-  background: linear-gradient(135deg, rgba(200,146,42,0.14), rgba(200,146,42,0.04));
-  border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  font-size: 24px; margin-bottom: 18px;
-}
-.card h3 { font-size: 17px; font-weight: 700; color: #0B1F3A; margin-bottom: 9px; }
-.card p { font-size: 14px; color: #6B7280; line-height: 1.7; }
+/* Sections */
+.section { max-width:1200px; margin:0 auto; padding:80px 24px; }
+.sec-label { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color: var(--gold); margin-bottom:12px; }
+.sec-title { font-family: var(--font-serif); font-size: clamp(26px, 3vw, 40px); font-weight:700; color: var(--navy); line-height:1.2; margin-bottom:14px; }
+.sec-sub { font-size:15px; color: var(--grey); max-width:560px; line-height:1.75; }
+.cards-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:22px; margin-top:48px; }
+.card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:30px 26px; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+.card:hover, .card:focus-within { transform: translateY(-4px); box-shadow: 0 10px 36px rgba(11,31,58,0.09); border-color: var(--gold); }
+.card-icon { width:50px; height:50px; background: linear-gradient(135deg, rgba(200,146,42,0.14), rgba(200,146,42,0.04)); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:18px; }
+.card h3 { font-size:17px; font-weight:700; color: var(--navy); margin-bottom:9px; }
+.card p { font-size:14px; color: var(--grey); line-height:1.7; }
 
 /* Risk banner */
-.risk-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; }
-.risk-banner {
-  background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px; padding: 20px 24px;
-}
-.risk-banner h4 { font-size: 12px; font-weight: 700; color: #92400E; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
-.risk-banner ul { padding-left: 18px; }
-.risk-banner li { font-size: 13px; color: #78350F; line-height: 1.9; }
-.risk-source { font-size: 11.5px; color: #92400E; margin-top: 8px; font-style: italic; }
+.risk-wrap { max-width:1200px; margin:0 auto; padding:0 24px 64px; }
+.risk-banner { background:#FFFBEB; border:1px solid #FDE68A; border-radius:12px; padding:20px 24px; }
+.risk-banner h4 { font-size:12px; font-weight:700; color:#92400E; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px; }
+.risk-banner ul { padding-left:18px; list-style: disc; }
+.risk-banner li { font-size:13px; color:#78350F; line-height:1.9; }
+.risk-source { font-size:11.5px; color:#92400E; margin-top:8px; font-style:italic; }
 
-/* ===== PAGE HERO ===== */
-.page-hero { background: linear-gradient(135deg, #0B1F3A, #122845); padding: 52px 24px 48px; }
-.page-hero-inner { max-width: 1200px; margin: 0 auto; }
-.breadcrumb { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 14px; }
-.breadcrumb span { color: #E8B84B; }
-.page-hero h1 { font-family: var(--font-serif); font-size: clamp(30px, 3vw, 46px); font-weight: 700; color: #FFFFFF; }
+/* Page hero */
+.page-hero { background: linear-gradient(135deg, var(--navy), var(--navy2)); padding:52px 24px 48px; }
+.page-hero-inner { max-width:1200px; margin:0 auto; }
+.breadcrumb { font-size:13px; color: rgba(255,255,255,0.6); margin-bottom:14px; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); text-decoration: underline; }
+.breadcrumb span { color: var(--gold-light); font-weight:600; }
+.page-hero h1 { font-family: var(--font-serif); font-size: clamp(30px, 3vw, 46px); font-weight:700; color:#fff; }
 
-/* ===== ABOUT ===== */
-.about-body { max-width: 1200px; margin: 0 auto; padding: 56px 24px 0; }
-.about-body p { font-size: 16px; color: #374151; line-height: 1.85; margin-bottom: 18px; }
-.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 40px; }
-.team-card { background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 18px; overflow: hidden; }
-.team-card-top {
-  background: linear-gradient(135deg, #0B1F3A, #122845);
-  padding: 28px 28px; display: flex; align-items: center; gap: 18px;
-}
-.team-avatar {
-  width: 76px; height: 76px; border-radius: 50%; flex-shrink: 0;
-  background: linear-gradient(135deg, #C8922A, #E8B84B);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: #0B1F3A;
-}
-.team-name { font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: #FFFFFF; }
-.team-role { font-size: 11px; color: #E8B84B; letter-spacing: 1.8px; text-transform: uppercase; margin-top: 4px; }
-.team-body { padding: 26px 28px; }
-.team-body p { font-size: 14px; color: #4B5563; line-height: 1.75; margin-bottom: 18px; }
-.team-contact a {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 13.5px; color: #0B1F3A; text-decoration: none;
-  padding: 8px 12px; background: #F3F4F6; border-radius: 8px;
-  margin-bottom: 8px; transition: background 0.2s;
-}
-.team-contact a:hover { background: rgba(200,146,42,0.1); }
+/* About */
+.about-body { max-width:1200px; margin:0 auto; padding:56px 24px 0; }
+.about-body p { font-size:16px; color:#374151; line-height:1.85; margin-bottom:18px; }
+.team-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:28px; margin-top:40px; }
+.team-card { background:#fff; border:1px solid var(--border); border-radius:18px; overflow:hidden; }
+.team-card-top { background: linear-gradient(135deg, var(--navy), var(--navy2)); padding:28px 28px; display:flex; align-items:center; gap:18px; }
+.team-avatar { width:76px; height:76px; border-radius:50%; flex-shrink:0; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display:flex; align-items:center; justify-content:center; font-family: var(--font-serif); font-size:28px; font-weight:700; color: var(--navy); }
+.team-name { font-family: var(--font-serif); font-size:22px; font-weight:700; color:#fff; }
+.team-role { font-size:11px; color: var(--gold-light); letter-spacing:1.8px; text-transform:uppercase; margin-top:4px; }
+.team-body { padding:26px 28px; }
+.team-body p { font-size:14px; color:#4B5563; line-height:1.75; margin-bottom:18px; }
+.team-contact a { display:flex; align-items:center; gap:10px; font-size:13.5px; color: var(--navy); text-decoration:none; padding:8px 12px; background: var(--light-grey); border-radius:8px; margin-bottom:8px; transition: background 0.2s; }
+.team-contact a:hover, .team-contact a:focus-visible { background: rgba(200,146,42,0.13); }
 
-/* ===== SERVICES ===== */
-.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 40px; }
-.service-card {
-  background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 16px; padding: 34px 30px;
-  transition: all 0.25s; cursor: default;
-}
-.service-card:hover { border-color: #C8922A; box-shadow: 0 8px 32px rgba(11,31,58,0.09); transform: translateY(-3px); }
-.service-icon { font-size: 34px; margin-bottom: 18px; display: block; }
-.service-card h3 { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: #0B1F3A; margin-bottom: 10px; }
-.service-card p { font-size: 14px; color: #6B7280; line-height: 1.7; }
-.pricing-wrap { background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 18px; overflow: hidden; margin-top: 56px; }
-.pricing-head { background: #0B1F3A; padding: 22px 28px; }
-.pricing-head h3 { font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: #FFFFFF; }
-.pricing-head p { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 4px; }
-.pricing-scroll { overflow-x: auto; }
-.pricing-table { width: 100%; border-collapse: collapse; min-width: 700px; }
-.pricing-table th {
-  background: rgba(11,31,58,0.04); padding: 13px 18px; text-align: left;
-  font-size: 13px; font-weight: 700; color: #0B1F3A; border-bottom: 2px solid #E5E1D8;
-  white-space: nowrap;
-}
-.pricing-table td { padding: 13px 18px; font-size: 13px; color: #374151; border-bottom: 1px solid #F3F4F6; line-height: 1.55; }
-.pricing-table tr:last-child td { border-bottom: none; }
-.pricing-table tr:hover td { background: rgba(200,146,42,0.03); }
-.pricing-table td:first-child { font-weight: 700; color: #0B1F3A; white-space: nowrap; }
+/* Services */
+.services-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:22px; margin-top:40px; }
+.service-card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:34px 30px; transition: all 0.25s; }
+.service-card:hover, .service-card:focus-within { border-color: var(--gold); box-shadow: 0 8px 32px rgba(11,31,58,0.09); transform: translateY(-3px); }
+.service-icon { font-size:34px; margin-bottom:18px; display:block; }
+.service-card h3 { font-family: var(--font-serif); font-size:24px; font-weight:700; color: var(--navy); margin-bottom:10px; }
+.service-card p { font-size:14px; color: var(--grey); line-height:1.7; }
+.pricing-wrap { background:#fff; border:1px solid var(--border); border-radius:18px; overflow:hidden; margin-top:56px; }
+.pricing-head { background: var(--navy); padding:22px 28px; }
+.pricing-head h3 { font-family: var(--font-serif); font-size:26px; font-weight:700; color:#fff; }
+.pricing-head p { font-size:13px; color: rgba(255,255,255,0.65); margin-top:4px; }
+.pricing-scroll { overflow-x:auto; }
+.pricing-table { width:100%; border-collapse:collapse; min-width:700px; }
+.pricing-table caption { padding: 12px; text-align: left; font-weight: 600; color: var(--navy); }
+.pricing-table th { background: rgba(11,31,58,0.04); padding:13px 18px; text-align:left; font-size:13px; font-weight:700; color: var(--navy); border-bottom:2px solid var(--border); white-space:nowrap; }
+.pricing-table td { padding:13px 18px; font-size:13px; color:#374151; border-bottom:1px solid var(--light-grey); line-height:1.55; }
+.pricing-table tr:last-child td { border-bottom:none; }
+.pricing-table tr:hover td, .pricing-table tr:focus-within td { background: rgba(200,146,42,0.04); }
+.pricing-table td:first-child { font-weight:700; color: var(--navy); white-space:nowrap; }
 
-/* ===== INVESTOR CORNER ===== */
-.doc-block { background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 14px; overflow: hidden; margin-bottom: 28px; }
-.doc-block-title { background: #0B1F3A; padding: 14px 22px; }
-.doc-block-title h3 { font-size: 14px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.3px; }
-.doc-table { width: 100%; border-collapse: collapse; }
-.doc-table tr { border-bottom: 1px solid #F3F4F6; }
-.doc-table tr:last-child { border-bottom: none; }
-.doc-table tr:hover td { background: rgba(200,146,42,0.03); }
-.doc-table td { padding: 13px 22px; font-size: 14px; color: #374151; }
-.doc-table td:first-child { color: #0B1F3A; font-weight: 500; }
-.doc-table td:last-child { text-align: right; white-space: nowrap; }
-.btn-dl {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 5px 13px; border-radius: 6px; font-size: 11.5px; font-weight: 700;
-  text-decoration: none; cursor: pointer; border: 1.5px solid; transition: all 0.18s;
-  font-family: var(--font-sans); letter-spacing: 0.3px; text-transform: uppercase;
-}
-.btn-dl.pdf { color: #DC2626; border-color: #DC2626; background: transparent; }
-.btn-dl.pdf:hover { background: #DC2626; color: #FFFFFF; }
-.btn-dl.zip { color: #7C3AED; border-color: #7C3AED; background: transparent; }
-.btn-dl.zip:hover { background: #7C3AED; color: #FFFFFF; }
-.btn-dl.lnk { color: #C8922A; border-color: #C8922A; background: transparent; }
-.btn-dl.lnk:hover { background: #C8922A; color: #FFFFFF; }
-.btn-dl.docx { color: #1D6AE5; border-color: #1D6AE5; background: transparent; }
-.btn-dl.docx:hover { background: #1D6AE5; color: #FFFFFF; }
-.lang-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 18px 22px; }
-.lang-btn {
-  display: flex; align-items: center; justify-content: space-between;
-  background: #F3F4F6; border: 1px solid #E5E1D8; border-radius: 8px;
-  padding: 10px 13px; font-size: 13px; font-weight: 500; color: #0B1F3A;
-  text-decoration: none; cursor: pointer; transition: all 0.2s;
-  font-family: var(--font-sans);
-}
-.lang-btn:hover { background: #0B1F3A; color: #FFFFFF; }
-.lang-btn .lang-ext { font-size: 10px; font-weight: 700; color: #7C3AED; }
-.lang-btn:hover .lang-ext { color: rgba(255,255,255,0.65); }
-.investor-notice {
-  background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 13px;
-  padding: 22px 24px; margin-bottom: 28px;
-}
-.investor-notice h4 { font-size: 12px; font-weight: 700; color: #1E3A5F; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
-.investor-notice p { font-size: 13px; color: #1E40AF; line-height: 1.8; }
-.investor-notice p + p { margin-top: 10px; }
-.investor-notice a { color: #1D4ED8; }
+/* Investor corner blocks */
+.doc-block { background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:28px; }
+.doc-block-title { background: var(--navy); padding:14px 22px; }
+.doc-block-title h3 { font-size:14px; font-weight:700; color:#fff; letter-spacing:0.3px; }
+.doc-table { width:100%; border-collapse:collapse; }
+.doc-table caption { padding: 12px; text-align: left; font-weight: 600; }
+.doc-table tr { border-bottom:1px solid var(--light-grey); }
+.doc-table tr:last-child { border-bottom:none; }
+.doc-table tr:hover td, .doc-table tr:focus-within td { background: rgba(200,146,42,0.04); }
+.doc-table td { padding:13px 22px; font-size:14px; color:#374151; }
+.doc-table td:first-child { color: var(--navy); font-weight:500; }
+.doc-table td:last-child { text-align:right; white-space:nowrap; }
+.btn-dl { display:inline-flex; align-items:center; gap:5px; padding:5px 13px; border-radius:6px; font-size:11.5px; font-weight:700; text-decoration:none; cursor:pointer; border:1.5px solid; transition: all 0.18s; font-family: var(--font-sans); letter-spacing:0.3px; text-transform:uppercase; }
+.btn-dl.pdf { color:#B91C1C; border-color:#B91C1C; background:transparent; }
+.btn-dl.pdf:hover, .btn-dl.pdf:focus-visible { background:#B91C1C; color:#fff; }
+.btn-dl.zip { color:#6D28D9; border-color:#6D28D9; background:transparent; }
+.btn-dl.zip:hover, .btn-dl.zip:focus-visible { background:#6D28D9; color:#fff; }
+.btn-dl.lnk { color: var(--gold); border-color: var(--gold); background:transparent; }
+.btn-dl.lnk:hover, .btn-dl.lnk:focus-visible { background: var(--gold); color:#fff; }
+.btn-dl.docx { color:#1D4ED8; border-color:#1D4ED8; background:transparent; }
+.btn-dl.docx:hover, .btn-dl.docx:focus-visible { background:#1D4ED8; color:#fff; }
+.lang-grid { display:grid; grid-template-columns: repeat(5,1fr); gap:10px; padding:18px 22px; }
+.lang-btn { display:flex; align-items:center; justify-content:space-between; background: var(--light-grey); border:1px solid var(--border); border-radius:8px; padding:10px 13px; font-size:13px; font-weight:500; color: var(--navy); text-decoration:none; cursor:pointer; transition: all 0.2s; font-family: var(--font-sans); }
+.lang-btn:hover, .lang-btn:focus-visible { background: var(--navy); color:#fff; }
+.lang-btn .lang-ext { font-size:10px; font-weight:700; color:#6D28D9; }
+.lang-btn:hover .lang-ext, .lang-btn:focus-visible .lang-ext { color: rgba(255,255,255,0.8); }
+.investor-notice { background:#EFF6FF; border:1px solid #BFDBFE; border-radius:13px; padding:22px 24px; margin-bottom:28px; }
+.investor-notice h4 { font-size:12px; font-weight:700; color:#1E3A5F; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px; }
+.investor-notice p { font-size:13px; color:#1E40AF; line-height:1.8; }
+.investor-notice p + p { margin-top:10px; }
+.investor-notice a { color:#1D4ED8; text-decoration: underline; }
 
-/* ===== CONTACT ===== */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 36px; }
-.contact-info h3 { font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: #0B1F3A; margin-bottom: 22px; }
-.contact-detail {
-  display: flex; align-items: flex-start; gap: 13px;
-  padding: 15px 16px; background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 12px; margin-bottom: 14px;
-}
-.cd-icon { font-size: 20px; margin-top: 2px; flex-shrink: 0; }
-.cd-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6B7280; margin-bottom: 4px; font-weight: 600; }
-.cd-value { font-size: 14px; color: #0B1F3A; font-weight: 500; line-height: 1.55; }
-.cd-value a { color: #0B1F3A; text-decoration: none; }
-.email-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
-.email-pill { background: #F3F4F6; border: 1px solid #E5E1D8; border-radius: 10px; padding: 13px 15px; }
-.email-dept { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #6B7280; font-weight: 700; margin-bottom: 5px; }
-.email-pill a { font-size: 12px; color: #0B1F3A; text-decoration: none; word-break: break-all; }
-.form-card { background: #FFFFFF; border: 1px solid #E5E1D8; border-radius: 18px; padding: 34px; }
-.form-card h3 { font-size: 20px; font-weight: 700; color: #0B1F3A; margin-bottom: 22px; }
-.fg { margin-bottom: 16px; }
-.fg label { display: block; font-size: 11.5px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+/* === Complaints data table (NEW – SEBI mandated) === */
+.complaints-block { background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:28px; }
+.complaints-table { width: 100%; border-collapse: collapse; }
+.complaints-table th, .complaints-table td { padding: 12px 18px; font-size: 13px; text-align: center; border: 1px solid var(--border); }
+.complaints-table th { background: var(--light-grey); color: var(--navy); font-weight: 700; }
+.complaints-table tbody tr:nth-child(even) td { background: #FAFAFA; }
+.complaints-table td:first-child { text-align: left; font-weight: 500; color: var(--navy); }
+
+/* Contact */
+.contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap:40px; margin-top:36px; }
+.contact-info h3 { font-family: var(--font-serif); font-size:26px; font-weight:700; color: var(--navy); margin-bottom:22px; }
+.contact-detail { display:flex; align-items:flex-start; gap:13px; padding:15px 16px; background:#fff; border:1px solid var(--border); border-radius:12px; margin-bottom:14px; }
+.cd-icon { font-size:20px; margin-top:2px; flex-shrink:0; }
+.cd-label { font-size:11px; text-transform:uppercase; letter-spacing:1px; color: var(--grey); margin-bottom:4px; font-weight:700; }
+.cd-value { font-size:14px; color: var(--navy); font-weight:500; line-height:1.55; }
+.cd-value a { color: var(--navy); text-decoration:none; }
+.cd-value a:hover { text-decoration: underline; }
+.email-grid { display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:24px; }
+.email-pill { background: var(--light-grey); border:1px solid var(--border); border-radius:10px; padding:13px 15px; }
+.email-dept { font-size:10px; text-transform:uppercase; letter-spacing:1px; color: var(--grey); font-weight:700; margin-bottom:5px; }
+.email-pill a { font-size:12px; color: var(--navy); text-decoration:none; word-break: break-all; }
+.email-pill a:hover { text-decoration: underline; }
+.form-card { background:#fff; border:1px solid var(--border); border-radius:18px; padding:34px; }
+.form-card h3 { font-size:20px; font-weight:700; color: var(--navy); margin-bottom:22px; }
+.fg { margin-bottom:16px; }
+.fg label { display:block; font-size:11.5px; font-weight:700; color:#374151; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:7px; }
+.fg label .req { color: #DC2626; }
 .fg input, .fg textarea, .fg select {
-  width: 100%; padding: 11px 14px; border: 1.5px solid #E5E1D8; border-radius: 8px;
-  font-size: 14px; font-family: var(--font-sans); color: #1A1A2E; background: #FAF7F2; outline: none;
-  transition: border-color 0.2s;
+  width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px;
+  font-size:14px; font-family: var(--font-sans); color: var(--text); background: var(--cream); outline: none;
+  transition: border-color 0.2s, background 0.2s;
 }
-.fg input:focus, .fg textarea:focus, .fg select:focus { border-color: #C8922A; background: #FFFFFF; }
+.fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--gold); background:#fff; }
 .fg textarea { resize: vertical; min-height: 96px; }
-.form-call { font-size: 12px; color: #6B7280; margin-top: 11px; text-align: center; }
-.form-call a { color: #0B1F3A; text-decoration: none; font-weight: 600; }
+.fg-error { color:#B91C1C; font-size:12px; margin-top:6px; display:none; }
+.fg.has-error input, .fg.has-error textarea, .fg.has-error select { border-color: #B91C1C; }
+.fg.has-error .fg-error { display: block; }
+.form-call { font-size:12px; color: var(--grey); margin-top:11px; text-align:center; }
+.form-call a { color: var(--navy); text-decoration:none; font-weight:600; }
 
-/* ===== FOOTER ===== */
-footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
-.footer-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 44px;
-}
-.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.footer-logo-icon {
-  width: 38px; height: 38px; background: linear-gradient(135deg, #C8922A, #E8B84B);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: #0B1F3A; flex-shrink: 0;
-}
-.footer-logo-name { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: #FFFFFF; }
-.footer-logo-tag { font-size: 9px; color: rgba(255,255,255,0.35); letter-spacing: 1.5px; text-transform: uppercase; }
-.footer-desc { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.7; max-width: 270px; margin-bottom: 16px; }
-.footer-social { display: flex; gap: 9px; }
-.footer-social a {
-  width: 33px; height: 33px; background: rgba(255,255,255,0.08); border-radius: 8px;
-  display: flex; align-items: center; justify-content: center; text-decoration: none;
-  font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 700; transition: background 0.2s;
-}
-.footer-social a:hover { background: rgba(200,146,42,0.3); color: #FFFFFF; }
-.footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
-.footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: 9px; }
-.footer-col a { color: rgba(255,255,255,0.62); text-decoration: none; font-size: 13.5px; cursor: pointer; transition: color 0.2s; }
-.footer-col a:hover { color: #E8B84B; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 0; max-width: 1200px; margin: 0 auto; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-.footer-links a {
-  font-size: 12px; color: rgba(255,255,255,0.42); text-decoration: none;
-  padding: 4px 10px; border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; transition: all 0.2s;
-}
-.footer-links a:hover { color: #E8B84B; border-color: rgba(200,146,42,0.4); }
-.footer-legal { font-size: 11.5px; color: rgba(255,255,255,0.27); line-height: 1.75; }
-.footer-legal a { color: rgba(255,255,255,0.27); text-decoration: none; }
+/* Footer */
+footer { background: var(--navy); color:#fff; padding:56px 24px 0; }
+.footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:36px; padding-bottom:44px; }
+.footer-logo { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.footer-logo-icon { width:38px; height:38px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-family: var(--font-serif); font-size:20px; font-weight:700; color: var(--navy); flex-shrink:0; }
+.footer-logo-name { font-family: var(--font-serif); font-size:16px; font-weight:700; color:#fff; }
+.footer-logo-tag { font-size:9px; color: rgba(255,255,255,0.5); letter-spacing:1.5px; text-transform:uppercase; }
+.footer-desc { font-size:13px; color: rgba(255,255,255,0.55); line-height:1.7; max-width:270px; margin-bottom:16px; }
+.footer-social { display:flex; gap:9px; }
+.footer-social a { width:33px; height:33px; background: rgba(255,255,255,0.08); border-radius:8px; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:13px; color: rgba(255,255,255,0.85); font-weight:700; transition: background 0.2s; }
+.footer-social a:hover, .footer-social a:focus-visible { background: rgba(200,146,42,0.35); color:#fff; }
+.footer-col h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1.2px; color: rgba(255,255,255,0.6); margin-bottom:14px; }
+.footer-col ul { list-style:none; }
+.footer-col li { margin-bottom:9px; }
+.footer-col a, .footer-col button { color: rgba(255,255,255,0.78); background:none; border:none; text-decoration:none; font-size:13.5px; cursor:pointer; transition: color 0.2s; font-family: var(--font-sans); text-align:left; padding:0; }
+.footer-col a:hover, .footer-col a:focus-visible, .footer-col button:hover, .footer-col button:focus-visible { color: var(--gold-light); text-decoration: underline; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,0.08); padding:20px 0; max-width:1200px; margin:0 auto; }
+.footer-links { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+.footer-links a { font-size:12px; color: rgba(255,255,255,0.6); text-decoration:none; padding:4px 10px; border:1px solid rgba(255,255,255,0.15); border-radius:4px; transition: all 0.2s; }
+.footer-links a:hover, .footer-links a:focus-visible { color: var(--gold-light); border-color: rgba(200,146,42,0.5); }
+.footer-legal { font-size:11.5px; color: rgba(255,255,255,0.55); line-height:1.75; }
+.footer-legal a { color: rgba(255,255,255,0.7); text-decoration: underline; }
 
-/* Risk Popup */
+/* Risk popup */
 .risk-overlay {
-  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.72);
-  z-index: 9999; align-items: center; justify-content: center;
+  display:none; position:fixed; inset:0; background: rgba(0,0,0,0.78);
+  z-index: 9999; align-items:center; justify-content:center;
 }
-.risk-overlay.show { display: flex; }
+.risk-overlay.show { display:flex; }
 .risk-popup {
-  background: #FFFFFF; border-radius: 18px; max-width: 620px; width: 92%;
-  max-height: 86vh; overflow-y: auto; padding: 36px;
+  background:#fff; border-radius:18px; max-width:620px; width:92%;
+  max-height:86vh; overflow-y:auto; padding:36px; position: relative;
 }
-.risk-popup h2 { font-family: var(--font-serif); font-size: 26px; color: #0B1F3A; margin-bottom: 18px; font-weight: 700; }
-.risk-popup ul { padding-left: 18px; margin-bottom: 16px; }
-.risk-popup li { font-size: 14px; color: #374151; line-height: 1.8; margin-bottom: 4px; }
-.risk-popup .src { font-size: 12px; color: #6B7280; font-style: italic; margin-bottom: 18px; }
-.risk-popup .body-note { font-size: 14px; color: #374151; line-height: 1.7; }
-.risk-close {
-  background: #0B1F3A; color: #FFFFFF; border: none; padding: 12px 28px;
-  border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; margin-top: 18px;
-  font-family: var(--font-sans);
+.risk-popup h2 { font-family: var(--font-serif); font-size:26px; color: var(--navy); margin-bottom:18px; font-weight:700; }
+.risk-popup ul { padding-left:18px; margin-bottom:16px; list-style: disc; }
+.risk-popup li { font-size:14px; color:#374151; line-height:1.8; margin-bottom:4px; }
+.risk-popup .src { font-size:12px; color: var(--grey); font-style:italic; margin-bottom:18px; }
+.risk-popup .body-note { font-size:14px; color:#374151; line-height:1.7; }
+.risk-close { background: var(--navy); color:#fff; border:none; padding:12px 28px; border-radius:8px; font-size:14px; font-weight:700; cursor:pointer; margin-top:18px; font-family: var(--font-sans); }
+.risk-close:hover { background: var(--navy2); }
+.risk-x {
+  position: absolute; top: 12px; right: 14px;
+  background: transparent; border: none; font-size: 24px; line-height: 1;
+  cursor: pointer; color: var(--grey); padding: 6px 10px; border-radius: 4px;
 }
+.risk-x:hover, .risk-x:focus-visible { background: var(--light-grey); color: var(--navy); }
 
-/* ===== RESPONSIVE ===== */
+/* Responsive */
+@media (max-width: 1024px) {
+  .acc-strip-left .acc-hindi { display: none; }
+}
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .cards-grid, .services-grid, .team-grid, .contact-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
-  .lang-grid { grid-template-columns: repeat(3, 1fr); }
+  .lang-grid { grid-template-columns: repeat(3,1fr); }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .pricing-table { font-size: 12px; }
 }
 @media (max-width: 600px) {
   .footer-inner { grid-template-columns: 1fr; }
-  .lang-grid { grid-template-columns: repeat(2, 1fr); }
+  .lang-grid { grid-template-columns: repeat(2,1fr); }
   .email-grid { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
+  .acc-strip { padding: 0 12px; }
+  .acc-strip-btn span { display: none; }
+  .acc-panel { right: 8px; left: 8px; width: auto; max-width: none; }
+}
+
+@media print {
+  .acc-strip, nav.main-nav, .mobile-menu, .investor-marquee, .hamburger, .acc-panel, .risk-overlay, .footer-social { display: none !important; }
+  .page { display: block !important; padding-top: 0; }
 }
 </style>
 </head>
 <body>
 
-<!-- ======= NAV ======= -->
-<nav>
+<!-- ============================================================
+     SKIP LINK (WCAG 2.4.1)
+     ============================================================ -->
+<a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+<!-- ============================================================
+     TOP ACCESSIBILITY STRIP (replica of SC of India)
+     ============================================================ -->
+<div class="acc-strip" role="region" aria-label="Accessibility Toolbar">
+  <div class="acc-strip-left">
+    <span class="acc-hindi" lang="hi">टोडी सिक्योरिटीज प्राइवेट लिमिटेड</span>
+    <span>SEBI Reg. INZ000214535</span>
+  </div>
+
+  <a href="#main-content" class="acc-skip">Skip to Main Content</a>
+
+  <button type="button" class="acc-strip-btn" id="acc-search-toggle" aria-label="Search the website">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <span class="sr-only">Search</span>
+  </button>
+
+  <button type="button" class="acc-strip-btn" id="acc-feedback-toggle" aria-label="Send Feedback">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="sr-only">Feedback</span>
+  </button>
+
+  <button type="button" class="acc-strip-btn" id="acc-sitemap-toggle" aria-label="Open Sitemap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span class="sr-only">Sitemap</span>
+  </button>
+
+  <button type="button" class="acc-strip-btn" id="acc-panel-toggle" aria-label="Open Accessibility Tools" aria-expanded="false" aria-controls="acc-panel">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M19 8h-5v3l-2 7h2l1.5-5h2L19 18h2l-2-7zM5 8v3l2 7h2l-1.5-5h2L11 18h2L11 11V8z"/></svg>
+    <span class="sr-only">Accessibility Tools</span>
+  </button>
+
+  <button type="button" class="acc-strip-btn" id="acc-lang-toggle" aria-label="Change Language" aria-expanded="false">
+    <span>English</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+</div>
+
+<!-- ============================================================
+     ACCESSIBILITY PANEL (exact replica of SC of India)
+     ============================================================ -->
+<div class="acc-panel" id="acc-panel" role="dialog" aria-label="Accessibility Tools" aria-modal="false">
+  <h2>Accessibility Tools</h2>
+
+  <h3>Color Contrast</h3>
+  <div class="acc-grid">
+    <button type="button" class="acc-tile" data-mode="high-contrast" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" fill="currentColor"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+      <span class="acc-check"></span>
+      <span>High Contrast</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="normal-contrast" aria-pressed="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5" fill="currentColor"/></svg>
+      <span class="acc-check"></span>
+      <span>Normal Contrast</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="highlight-links" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="acc-check"></span>
+      <span>Highlight Links</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="invert" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20V2z" fill="currentColor"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+      <span class="acc-check"></span>
+      <span>Invert</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="saturation" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 7a7 7 0 1 1-14 0z" fill="currentColor"/></svg>
+      <span class="acc-check"></span>
+      <span>Saturation</span>
+    </button>
+  </div>
+
+  <h3>Text Size</h3>
+  <div class="acc-grid">
+    <button type="button" class="acc-tile" data-mode="font-up" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><text x="2" y="18" font-size="18" font-weight="700" fill="currentColor" stroke="none">A</text><path d="M16 6v8M12 10h8"/></svg>
+      <span class="acc-check"></span>
+      <span>Font Size Increase</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="font-down" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><text x="2" y="18" font-size="18" font-weight="700" fill="currentColor" stroke="none">A</text><path d="M12 10h8"/></svg>
+      <span class="acc-check"></span>
+      <span>Font Size Decrease</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="font-normal" aria-pressed="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><text x="6" y="19" font-size="20" font-weight="700" fill="currentColor">A</text></svg>
+      <span class="acc-check"></span>
+      <span>Normal Font</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="text-spacing" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><path d="M2 12l-1 0M22 12l1 0" stroke-width="2.5"/></svg>
+      <span class="acc-check"></span>
+      <span>Text Spacing</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="line-height" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 18h18"/><path d="M12 2v20M9 5l3-3 3 3M9 19l3 3 3-3"/></svg>
+      <span class="acc-check"></span>
+      <span>Line Height</span>
+    </button>
+  </div>
+
+  <h3>Others</h3>
+  <div class="acc-grid acc-grid-2">
+    <button type="button" class="acc-tile" data-mode="hide-images" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 3l18 18"/></svg>
+      <span class="acc-check"></span>
+      <span>Hide Images</span>
+    </button>
+    <button type="button" class="acc-tile" data-mode="big-cursor" aria-pressed="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3l7 17 3-7 7-3z" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
+      <span class="acc-check"></span>
+      <span>Big Cursor</span>
+    </button>
+  </div>
+
+  <button type="button" class="acc-reset" id="acc-reset">Reset All Accessibility Settings</button>
+</div>
+
+<!-- ============================================================
+     MAIN NAVIGATION
+     ============================================================ -->
+<nav class="main-nav" aria-label="Primary navigation">
   <div class="nav-inner">
-    <div class="nav-logo" onclick="showPage('home')">
-      <div class="nav-logo-icon">T</div>
+    <button type="button" class="nav-logo" onclick="showPage('home')" aria-label="Todi Securities Home">
+      <div class="nav-logo-icon" aria-hidden="true">T</div>
       <div>
         <span class="nav-logo-name">Todi Securities</span>
         <span class="nav-logo-tag">Private Limited</span>
       </div>
-    </div>
-    <div class="nav-links">
-      <a id="nav-home" class="active" onclick="showPage('home')">Home</a>
-      <a id="nav-about" onclick="showPage('about')">About Us</a>
-      <a id="nav-services" onclick="showPage('services')">Services</a>
-      <a id="nav-investor" onclick="showPage('investor')">Investor Corner</a>
-      <a id="nav-contact" onclick="showPage('contact')">Contact Us</a>
-    </div>
-    <div class="nav-cta">
-      <button class="btn-nav-login" onclick="alert('Login portal: Please contact us for your trading or back-office login credentials.')">Login</button>
-      <a class="btn-nav-register" href="mailto:todisec@hotmail.com">Register</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
+    </button>
+
+    <ul class="nav-links" role="menubar">
+      <li role="none"><button role="menuitem" id="nav-home" class="active" onclick="showPage('home')" aria-current="page">Home</button></li>
+      <li role="none"><button role="menuitem" id="nav-about" onclick="showPage('about')">About Us</button></li>
+      <li role="none"><button role="menuitem" id="nav-services" onclick="showPage('services')">Services</button></li>
+      <li role="none"><button role="menuitem" id="nav-investor" onclick="showPage('investor')">Investor Corner</button></li>
+      <li role="none"><button role="menuitem" id="nav-contact" onclick="showPage('contact')">Contact Us</button></li>
+    </ul>
+
+    <button type="button" class="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a onclick="showPage('home');toggleMenu()">Home</a>
-  <a onclick="showPage('about');toggleMenu()">About Us</a>
-  <a onclick="showPage('services');toggleMenu()">Services</a>
-  <a onclick="showPage('investor');toggleMenu()">Investor Corner</a>
-  <a onclick="showPage('contact');toggleMenu()">Contact Us</a>
-  <div class="mobile-cta">
-    <button class="btn-nav-login" style="flex:1" onclick="alert('Please contact us for login credentials.')">Login</button>
-    <a class="btn-nav-register" href="mailto:todisec@hotmail.com" style="flex:1;text-align:center">Register</a>
-  </div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button onclick="showPage('home');toggleMenu()">Home</button>
+  <button onclick="showPage('about');toggleMenu()">About Us</button>
+  <button onclick="showPage('services');toggleMenu()">Services</button>
+  <button onclick="showPage('investor');toggleMenu()">Investor Corner</button>
+  <button onclick="showPage('contact');toggleMenu()">Contact Us</button>
 </div>
 
-<!-- ============================================================ HOME -->
-<div class="page active" id="page-home">
+<!-- Mandatory investor warning marquee -->
+<div class="investor-marquee" role="region" aria-label="Investor warning notice">
+  <span class="investor-marquee-track">
+    <strong>Attention Investors:</strong> Prevent unauthorised transactions in your account — update your mobile number / email ID with your stock broker. Receive information of your transactions directly from the Exchange on your mobile / email at the end of the day. &nbsp; • &nbsp;
+    KYC is a one-time exercise while dealing in securities markets. &nbsp; • &nbsp;
+    Investments in securities market are subject to market risks; read all related documents carefully before investing. &nbsp; • &nbsp;
+    Issued in the interest of investors.
+  </span>
+</div>
 
-  <section class="hero">
-    <div class="hero-bg-glow"></div>
-    <div class="hero-grid"></div>
+<main id="main-content" tabindex="-1">
+
+<!-- ============================================================ HOME -->
+<div class="page active" id="page-home" role="region" aria-label="Home page">
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg-glow" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
     <div class="hero-inner">
       <div>
         <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          SEBI Registered · INZ000214535
+          <div class="hero-badge-dot" aria-hidden="true"></div>
+          <span>SEBI Registered · INZ000214535</span>
         </div>
-        <h1>Your Trusted Partner<br>in <em>Every Trade</em></h1>
+        <h1 id="hero-heading">Your Trusted Partner<br>in <em>Every Trade</em></h1>
         <p class="hero-sub">25 years of building a legacy in Indian equity markets. Member of NSE &amp; BSE, committed to your financial empowerment through trust, transparency, and technology.</p>
         <div class="hero-cta">
           <a class="btn-primary" href="mailto:todisec@hotmail.com">Open Account — Free</a>
-          <button class="btn-outline" onclick="showPage('about')">Learn More</button>
+          <button type="button" class="btn-outline" onclick="showPage('about')">Learn More</button>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-card">
-          <div class="stat-number">25+</div>
+      <div class="hero-stats" role="list" aria-label="Key statistics">
+        <div class="stat-card" role="listitem">
+          <div class="stat-number" aria-label="25 plus">25+</div>
           <div class="stat-label">Years of Market Legacy</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">&#8377;0</div>
+        <div class="stat-card" role="listitem">
+          <div class="stat-number" aria-label="Zero rupees">&#8377;0</div>
           <div class="stat-label">Account Opening Charges</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">&#8377;0</div>
+        <div class="stat-card" role="listitem">
+          <div class="stat-number" aria-label="Zero rupees">&#8377;0</div>
           <div class="stat-label">AMC for 1st Year</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">2000+</div>
+        <div class="stat-card" role="listitem">
+          <div class="stat-number" aria-label="2000 plus">2000+</div>
           <div class="stat-label">Traders Trained &amp; Mentored</div>
         </div>
       </div>
@@ -493,64 +753,64 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
   <div class="highlights">
     <div class="highlights-inner">
       <div class="hl-item">
-        <div class="hl-icon">&#127963;</div>
+        <div class="hl-icon" aria-hidden="true">&#127963;</div>
         <div><span class="hl-strong">NSE &amp; BSE Member</span><span class="hl-small">TM ID: 11900 (NSE) · 6136 (BSE)</span></div>
       </div>
       <div class="hl-item">
-        <div class="hl-icon">&#128274;</div>
+        <div class="hl-icon" aria-hidden="true">&#128274;</div>
         <div><span class="hl-strong">SEBI Registered</span><span class="hl-small">INZ000214535</span></div>
       </div>
       <div class="hl-item">
-        <div class="hl-icon">&#128200;</div>
+        <div class="hl-icon" aria-hidden="true">&#128200;</div>
         <div><span class="hl-strong">Equity &amp; F&amp;O</span><span class="hl-small">Capital Markets &amp; Derivatives</span></div>
       </div>
       <div class="hl-item">
-        <div class="hl-icon">&#127970;</div>
+        <div class="hl-icon" aria-hidden="true">&#127970;</div>
         <div><span class="hl-strong">Kolkata Based</span><span class="hl-small">Eastern India's Trusted Broker</span></div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <div class="sec-label">Why Choose Us</div>
+    <p class="sec-label">Why Choose Us</p>
     <h2 class="sec-title">Built on Trust,<br>Powered by Expertise</h2>
     <p class="sec-sub">At Todi Securities, we blend decades of market wisdom with modern technology to deliver a seamless trading experience.</p>
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-icon">&#127919;</div>
+    <div class="cards-grid" role="list">
+      <article class="card" role="listitem">
+        <div class="card-icon" aria-hidden="true">&#127919;</div>
         <h3>Market Expertise</h3>
         <p>Over 40 years of combined experience in Indian equity markets. Our founders have trained 2,000+ traders across the country.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#9889;</div>
+      </article>
+      <article class="card" role="listitem">
+        <div class="card-icon" aria-hidden="true">&#9889;</div>
         <h3>Technology-Driven</h3>
         <p>High-performance trading infrastructure with real-time data, advanced charting, and seamless order execution across NSE &amp; BSE.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128737;</div>
+      </article>
+      <article class="card" role="listitem">
+        <div class="card-icon" aria-hidden="true">&#128737;</div>
         <h3>Regulatory Compliance</h3>
         <p>Fully SEBI-registered with robust investor protection mechanisms, transparent pricing, and rigorous compliance frameworks.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128188;</div>
+      </article>
+      <article class="card" role="listitem">
+        <div class="card-icon" aria-hidden="true">&#128188;</div>
         <h3>Diverse Products</h3>
         <p>From equity delivery to F&amp;O strategies — we offer a full suite of financial products tailored to every investor profile.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#129309;</div>
+      </article>
+      <article class="card" role="listitem">
+        <div class="card-icon" aria-hidden="true">&#129309;</div>
         <h3>Personalised Service</h3>
         <p>We understand that each client is unique. Our team offers customised financial guidance aligned with your goals and risk profile.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#127758;</div>
+      </article>
+      <article class="card" role="listitem">
+        <div class="card-icon" aria-hidden="true">&#127758;</div>
         <h3>Financial Inclusion</h3>
         <p>Making markets accessible for all — from first-time investors to seasoned traders — across Eastern India and beyond.</p>
-      </div>
+      </article>
     </div>
   </div>
 
   <div class="risk-wrap">
-    <div class="risk-banner">
+    <aside class="risk-banner" aria-label="Risk disclosures on derivatives">
       <h4>&#9888;&#65039; Risk Disclosures on Derivatives</h4>
       <ul>
         <li>9 out of 10 individual traders in equity F&amp;O Segment incurred net losses.</li>
@@ -559,16 +819,16 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
         <li>Those making net trading profits incurred between 15% to 50% of such profits as transaction cost.</li>
       </ul>
       <p class="risk-source">Source: SEBI study dated January 25, 2023 — Analysis of Profit and Loss of Individual Traders dealing in equity F&amp;O Segment, FY 2021-22.</p>
-    </div>
+    </aside>
   </div>
 
 </div><!-- /home -->
 
 <!-- ============================================================ ABOUT -->
-<div class="page" id="page-about">
+<div class="page" id="page-about" role="region" aria-label="About Us page">
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="breadcrumb">Home &rsaquo; <span>About Us</span></div>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" onclick="showPage('home');return false;">Home</a> &rsaquo; <span>About Us</span></nav>
       <h1>About Company</h1>
     </div>
   </div>
@@ -581,49 +841,49 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
   </div>
 
   <div class="section">
-    <div class="sec-label">Leadership</div>
+    <p class="sec-label">Leadership</p>
     <h2 class="sec-title">Meet the Team</h2>
     <div class="team-grid">
-      <div class="team-card">
+      <article class="team-card">
         <div class="team-card-top">
-          <div class="team-avatar">P</div>
+          <div class="team-avatar" aria-hidden="true">P</div>
           <div>
             <div class="team-name">Pawan Kumar Todi</div>
-            <div class="team-role">MANAGING DIRECTOR &amp; CEO</div>
+            <div class="team-role">Managing Director &amp; CEO</div>
           </div>
         </div>
         <div class="team-body">
           <p>Pawan Kumar Todi is a market veteran with over 40 years of experience in the Indian equities market. His journey began as a jobber at the Calcutta Stock Exchange, where his sharp market acumen helped him rise quickly to become a full-fledged member in less than a decade.</p>
           <p>As the Founder of Todi Securities, he has trained and mentored over 2,000 traders and arbitrageurs, equipping them with cutting-edge market strategies. A strong, patient, and agile trader and investor, he is an inspiration to many in the financial world.</p>
           <div class="team-contact">
-            <a href="tel:+919831207994">&#128222; +91 98312 07994</a>
-            <a href="mailto:pktodi@todisecurities.com">&#9993;&#65039; pktodi@todisecurities.com</a>
+            <a href="tel:+919831207994" aria-label="Call Pawan Kumar Todi at +91 98312 07994"><span aria-hidden="true">&#128222;</span> +91 98312 07994</a>
+            <a href="mailto:pktodi@todisecurities.com" aria-label="Email Pawan Kumar Todi"><span aria-hidden="true">&#9993;&#65039;</span> pktodi@todisecurities.com</a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="team-card">
+      <article class="team-card">
         <div class="team-card-top">
-          <div class="team-avatar">N</div>
+          <div class="team-avatar" aria-hidden="true">N</div>
           <div>
             <div class="team-name">Nikhil Todi</div>
-            <div class="team-role">DIRECTOR &amp; COMPLIANCE OFFICER</div>
+            <div class="team-role">Director &amp; Compliance Officer</div>
           </div>
         </div>
         <div class="team-body">
           <p>Nikhil Todi is a dynamic leader and second-generation entrepreneur, driving the firm's expansion into modern, technology-driven trading solutions. A postgraduate in Finance from SP Jain Institute of Management &amp; Research and an Associate Actuary from the Institute of Actuaries of India.</p>
           <p>Before joining Todi Securities, Nikhil gained experience at EY, PwC, Kotak Securities, and CLSA — spanning equity research, investment analysis, actuarial valuation, and risk calculations.</p>
           <div class="team-contact">
-            <a href="tel:+919836400056">&#128222; +91 98364 00056</a>
-            <a href="mailto:niktodi6@gmail.com">&#9993;&#65039; niktodi6@gmail.com</a>
+            <a href="tel:+919836400056" aria-label="Call Nikhil Todi at +91 98364 00056"><span aria-hidden="true">&#128222;</span> +91 98364 00056</a>
+            <a href="mailto:niktodi6@gmail.com" aria-label="Email Nikhil Todi"><span aria-hidden="true">&#9993;&#65039;</span> niktodi6@gmail.com</a>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 
   <div class="risk-wrap">
-    <div class="risk-banner">
+    <aside class="risk-banner" aria-label="Risk disclosures on derivatives">
       <h4>&#9888;&#65039; Risk Disclosures on Derivatives</h4>
       <ul>
         <li>9 out of 10 individual traders in equity F&amp;O Segment incurred net losses.</li>
@@ -631,95 +891,66 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
         <li>Loss makers expended an additional 28% of net trading losses as transaction costs.</li>
         <li>Those making net trading profits incurred between 15% to 50% of such profits as transaction cost.</li>
       </ul>
-    </div>
+    </aside>
   </div>
 </div><!-- /about -->
 
 <!-- ============================================================ SERVICES -->
-<div class="page" id="page-services">
+<div class="page" id="page-services" role="region" aria-label="Services page">
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="breadcrumb">Home &rsaquo; <span>Services</span></div>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" onclick="showPage('home');return false;">Home</a> &rsaquo; <span>Services</span></nav>
       <h1>Our Services</h1>
     </div>
   </div>
   <div class="section">
     <div class="services-grid">
-      <div class="service-card">
-        <span class="service-icon">&#128202;</span>
-        <h3>Stock (Equity Delivery)</h3>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true">&#128202;</span>
+        <h2>Stock (Equity Delivery)</h2>
         <p>Own a stake in top companies and benefit from long-term capital growth. Access to NSE &amp; BSE listed equities with seamless settlement and portfolio tracking.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">&#128640;</span>
-        <h3>IPO Investments</h3>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true">&#128640;</span>
+        <h2>IPO Investments</h2>
         <p>Invest in emerging companies at an early stage and unlock significant growth potential. We facilitate IPO applications with ASBA and UPI-based subscriptions.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">&#9881;&#65039;</span>
-        <h3>Futures &amp; Options (F&amp;O)</h3>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true">&#9881;&#65039;</span>
+        <h2>Futures &amp; Options (F&amp;O)</h2>
         <p>Mitigate market fluctuations and boost profits with futures and options strategies. Access index and stock derivatives with real-time margin tracking.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">&#127758;</span>
-        <h3>ETF — Exchange Traded Funds</h3>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true">&#127758;</span>
+        <h2>ETF — Exchange Traded Funds</h2>
         <p>Gain exposure to diversified portfolios through exchange-traded index funds. Low-cost, highly liquid investments ideal for systematic wealth creation.</p>
-      </div>
+      </article>
     </div>
 
     <div class="pricing-wrap">
       <div class="pricing-head">
-        <h3>Transparent Pricing</h3>
+        <h2>Transparent Pricing</h2>
         <p>No hidden charges. Full clarity on every transaction cost.</p>
       </div>
-      <div class="pricing-scroll">
+      <div class="pricing-scroll" role="region" aria-label="Pricing details" tabindex="0">
         <table class="pricing-table">
+          <caption class="sr-only">Brokerage and statutory charges across products</caption>
           <thead>
             <tr>
-              <th>Charge</th>
-              <th>Equity Delivery</th>
-              <th>Equity Intraday</th>
-              <th>F&amp;O – Futures</th>
-              <th>F&amp;O – Options</th>
+              <th scope="col">Charge</th>
+              <th scope="col">Equity Delivery</th>
+              <th scope="col">Equity Intraday</th>
+              <th scope="col">F&amp;O – Futures</th>
+              <th scope="col">F&amp;O – Options</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Brokerage</td>
-              <td>0.25% on turnover</td>
-              <td>0.05% on turnover</td>
-              <td>0.05% on turnover</td>
-              <td>&#8377;20 per lot</td>
-            </tr>
-            <tr>
-              <td>STT / CTT</td>
-              <td>0.1% on buy &amp; sell</td>
-              <td>0.025% on sell side</td>
-              <td>0.02% on sell side</td>
-              <td>0.125% intrinsic value (exercised); 0.1% on premium (sell)</td>
-            </tr>
-            <tr>
-              <td>Transaction Charges</td>
-              <td>NSE: 0.00297% · BSE: 0.00375%</td>
-              <td>NSE: 0.00297% · BSE: 0.00375%</td>
-              <td>NSE: 0.00173% · BSE: 0%</td>
-              <td>NSE: 0.03503% · BSE: 0.0325% (on premium)</td>
-            </tr>
-            <tr>
-              <td>GST</td>
-              <td colspan="4">18% on (brokerage + SEBI charges + transaction charges)</td>
-            </tr>
-            <tr>
-              <td>SEBI Charges</td>
-              <td colspan="4">&#8377;10 per crore</td>
-            </tr>
-            <tr>
-              <td>Stamp Charges</td>
-              <td>0.015% or &#8377;1,500/crore (buy)</td>
-              <td>0.003% or &#8377;300/crore (buy)</td>
-              <td>0.002% or &#8377;200/crore (buy)</td>
-              <td>0.003% or &#8377;300/crore (buy)</td>
-            </tr>
+            <tr><th scope="row">Brokerage</th><td>0.25% on turnover</td><td>0.05% on turnover</td><td>0.05% on turnover</td><td>&#8377;20 per lot</td></tr>
+            <tr><th scope="row">STT / CTT</th><td>0.1% on buy &amp; sell</td><td>0.025% on sell side</td><td>0.02% on sell side</td><td>0.125% intrinsic value (exercised); 0.1% on premium (sell)</td></tr>
+            <tr><th scope="row">Transaction Charges</th><td>NSE: 0.00297% · BSE: 0.00375%</td><td>NSE: 0.00297% · BSE: 0.00375%</td><td>NSE: 0.00173% · BSE: 0%</td><td>NSE: 0.03503% · BSE: 0.0325% (on premium)</td></tr>
+            <tr><th scope="row">GST</th><td colspan="4">18% on (brokerage + SEBI charges + transaction charges)</td></tr>
+            <tr><th scope="row">SEBI Charges</th><td colspan="4">&#8377;10 per crore</td></tr>
+            <tr><th scope="row">Stamp Charges</th><td>0.015% or &#8377;1,500/crore (buy)</td><td>0.003% or &#8377;300/crore (buy)</td><td>0.002% or &#8377;200/crore (buy)</td><td>0.003% or &#8377;300/crore (buy)</td></tr>
           </tbody>
         </table>
       </div>
@@ -728,46 +959,65 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
 </div><!-- /services -->
 
 <!-- ============================================================ INVESTOR CORNER -->
-<div class="page" id="page-investor">
+<div class="page" id="page-investor" role="region" aria-label="Investor Corner page">
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="breadcrumb">Home &rsaquo; <span>Investor Corner</span></div>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" onclick="showPage('home');return false;">Home</a> &rsaquo; <span>Investor Corner</span></nav>
       <h1>Investor Information</h1>
     </div>
   </div>
   <div class="section">
-    <div class="sec-label">Resources</div>
+    <p class="sec-label">Resources</p>
     <h2 class="sec-title">Important Documents &amp; Links</h2>
 
-    <!-- Account Related -->
+    <!-- ===== NEW: COMPLAINTS DATA TABLE (SEBI MANDATED) ===== -->
     <div class="doc-block" style="margin-top:40px">
+      <div class="doc-block-title"><h3>Investor Complaints — Status (Data as on last month-end)</h3></div>
+      <div style="overflow-x:auto;padding:18px 22px">
+        <table class="complaints-table" aria-label="Investor complaints summary">
+          <caption class="sr-only">Investor complaints received and resolved as required by SEBI</caption>
+          <thead>
+            <tr>
+              <th scope="col">Sl. No.</th>
+              <th scope="col">Received From</th>
+              <th scope="col">Pending at the end of last month</th>
+              <th scope="col">Received during the month</th>
+              <th scope="col">Resolved during the month</th>
+              <th scope="col">Total Pending</th>
+              <th scope="col">Pending &gt; 3 months</th>
+              <th scope="col">Average Resolution Time (days)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Directly from Investors</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+            <tr><td>2</td><td>SEBI (SCORES 2.0)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+            <tr><td>3</td><td>Stock Exchanges (NSE / BSE)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+            <tr><td>4</td><td>Other Sources (if any)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+            <tr style="background:#FFFBEB"><td colspan="2"><strong>Grand Total</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>—</strong></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px;color:#6B7280;margin-top:12px;line-height:1.7"><em>Disclosure as per SEBI Master Circular for Stock Brokers. Updated within 7 days from end of each month. Trend of monthly disposal of complaints and trend of annual disposal of complaints for the last 5 financial years are available on request — please write to investorgrievances@todisecurities.com.</em></p>
+      </div>
+    </div>
+
+    <!-- Account Related -->
+    <div class="doc-block">
       <div class="doc-block-title"><h3>Account Related</h3></div>
       <table class="doc-table">
-        <tr><td>Client Registration Process</td><td><a class="btn-dl pdf" href="https://www.todisecurities.com/pdf/FINAL2_Account_Opening_Todi.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Account Closure Process</td><td><a class="btn-dl pdf" href="https://www.todisecurities.com/pdf/FINAL2_Account_Closure_Todi.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Trading Software (Desktop)</td><td><a class="btn-dl" href="#" onclick="noFile(event)" style="color:#374151;border-color:#374151">EXE &#8595;</a></td></tr>
+        <caption class="sr-only">Account opening and closure documents</caption>
+        <tbody>
+          <tr><td>Client Registration Process</td><td><a class="btn-dl pdf" href="https://www.todisecurities.com/pdf/FINAL2_Account_Opening_Todi.pdf" target="_blank" rel="noopener" aria-label="Download Client Registration Process PDF">PDF &#8595;</a></td></tr>
+          <tr><td>Account Closure Process</td><td><a class="btn-dl pdf" href="https://www.todisecurities.com/pdf/FINAL2_Account_Closure_Todi.pdf" target="_blank" rel="noopener" aria-label="Download Account Closure Process PDF">PDF &#8595;</a></td></tr>
+        </tbody>
       </table>
     </div>
 
     <!-- Regional Language KYC -->
     <div class="doc-block">
       <div class="doc-block-title"><h3>KYC Documents — Regional Languages</h3></div>
-      <div class="lang-grid">
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Assamese.zip" target="_blank">Assamese <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Bengali.zip" target="_blank">Bengali <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Gujrati.zip" target="_blank">Gujarati <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Hindi.zip" target="_blank">Hindi <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Kanada.zip" target="_blank">Kannada <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Kashmiri.zip" target="_blank">Kashmiri <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Konkani.zip" target="_blank">Konkani <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Malyalam.zip" target="_blank">Malayalam <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Marathi.zip" target="_blank">Marathi <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Oriya.zip" target="_blank">Oriya <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Punjabi.zip" target="_blank">Punjabi <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Sindhi.zip" target="_blank">Sindhi <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Tamil.zip" target="_blank">Tamil <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Telegu.zip" target="_blank">Telugu <span class="lang-ext">ZIP</span></a>
-        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Urdu.zip" target="_blank">Urdu <span class="lang-ext">ZIP</span></a>
+      <div class="lang-grid" role="list" aria-label="KYC documents in regional languages">
+        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Bengali.zip" target="_blank" rel="noopener" lang="bn" role="listitem">Bengali <span class="lang-ext">ZIP</span></a>
+        <a class="lang-btn" href="https://todisecurities.com/wp-content/uploads/2025/03/Hindi.zip" target="_blank" rel="noopener" lang="hi" role="listitem">Hindi <span class="lang-ext">ZIP</span></a>
       </div>
     </div>
 
@@ -775,52 +1025,90 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
     <div class="doc-block">
       <div class="doc-block-title"><h3>Investor Education &amp; Other Documents</h3></div>
       <table class="doc-table">
-        <tr><td>Important Do's &amp; Don'ts</td><td><a class="btn-dl pdf" href="pdf/Important%20Do's%20%26%20Dont's.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Rights &amp; Obligations</td><td><a class="btn-dl pdf" href="pdf/Rights_Obligations.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Uniform Risk Disclosure</td><td><a class="btn-dl pdf" href="pdf/Uniform-Risk-Disclosure.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Investor Charter</td><td><a class="btn-dl pdf" href="pdf/Investor-Charter.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Attention Investors</td><td><a class="btn-dl pdf" href="pdf/Attention_Investors.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Bank Account Details (for fund transfer)</td><td><a class="btn-dl pdf" href="pdf/Bank_Details_&_Cut-off_Time.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>SEBI Risk Disclosure (F&amp;O)</td><td><a class="btn-dl pdf" href="pdf/SEBI-Risk-Disclosure-F&O.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Procedure for Filing Complaints on SEBI 2.0 Portal</td><td><a class="btn-dl pdf" href="pdf/Complaints-on-SEBI-2-Portal.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Policy for Voluntary Freezing / Blocking of Trading Account</td><td><a class="btn-dl pdf" href="pdf/Policy-for-voluntary-freezing-or-blocking.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Advisory for Investors</td><td><a class="btn-dl pdf" href="pdf/Advisory_for_Investors.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Customer Support &amp; Grievance Redressal Policy</td><td><a class="btn-dl pdf" href="pdf/Customer-Support.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Grievance Redressal Escalation Matrix</td><td><a class="btn-dl pdf" href="pdf/UPDATED_Escalation_Matrix_Todi.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Investor Grievances Report</td><td><a class="btn-dl pdf" href="#" onclick="noFile(event)">PDF &#8595;</a></td></tr>
-        <tr><td>Details of the Key Management Personnels & Compliance Officer</td><td><a class="btn-dl pdf" href="https://www.todisecurities.com/pdf/UPDATED_KMP_Todi.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>List of Authorized Persons (APs)</td><td><a class="btn-dl pdf" href="pdf/Authorized_Persons_Todi.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>MITC</td><td><a class="btn-dl pdf" href="pdf/MITC.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Policies &amp; Procedures</td><td><a class="btn-dl pdf" href="pdf/Policies_&_Procedures.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Terms &amp; Conditions</td><td><a class="btn-dl pdf" href="pdf/Terms_and_Conditions.pdf" target="_blank">PDF &#8595;</a></td></tr>
-        <tr><td>Disclosure</td><td><a class="btn-dl pdf" href="pdf/Disclosure.pdf" target="_blank">PDF &#8595;</a></td></tr>
+        <caption class="sr-only">Investor education documents</caption>
+        <tbody>
+          <tr><td>Important Do's &amp; Don'ts</td><td><a class="btn-dl pdf" href="pdf/Important%20Do's%20%26%20Dont's.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Rights &amp; Obligations</td><td><a class="btn-dl pdf" href="pdf/Rights_Obligations.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Uniform Risk Disclosure</td><td><a class="btn-dl pdf" href="pdf/Uniform-Risk-Disclosure.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Investor Charter</td><td><a class="btn-dl pdf" href="pdf/Investor-Charter.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Attention Investors</td><td><a class="btn-dl pdf" href="pdf/Attention_Investors.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Bank Account Details (for fund transfer)</td><td><a class="btn-dl pdf" href="pdf/Bank_Details_&_Cut-off_Time.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>SEBI Risk Disclosure (F&amp;O)</td><td><a class="btn-dl pdf" href="pdf/SEBI-Risk-Disclosure-F&O.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Procedure for Filing Complaints on SEBI SCORES 2.0 Portal</td><td><a class="btn-dl pdf" href="pdf/Complaints-on-SEBI-2-Portal.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Policy for Voluntary Freezing / Blocking of Trading Account</td><td><a class="btn-dl pdf" href="pdf/Policy-for-voluntary-freezing-or-blocking.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Advisory for Investors</td><td><a class="btn-dl pdf" href="pdf/Advisory_for_Investors.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Customer Support &amp; Grievance Redressal Policy</td><td><a class="btn-dl pdf" href="pdf/Customer-Support.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Grievance Redressal Escalation Matrix</td><td><a class="btn-dl pdf" href="pdf/UPDATED_Escalation_Matrix_Todi.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Investor Grievances Report</td><td><a class="btn-dl pdf" href="#" onclick="noFile(event)">PDF &#8595;</a></td></tr>
+          <tr><td>Details of Key Management Personnel &amp; Compliance Officer</td><td><a class="btn-dl pdf" href="https://www.todisecurities.com/pdf/UPDATED_KMP_Todi.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>List of Authorized Persons (APs)</td><td><a class="btn-dl pdf" href="pdf/Authorized_Persons_Todi.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Most Important Terms &amp; Conditions (MITC)</td><td><a class="btn-dl pdf" href="pdf/MITC.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Policies &amp; Procedures</td><td><a class="btn-dl pdf" href="pdf/Policies_&_Procedures.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Terms &amp; Conditions</td><td><a class="btn-dl pdf" href="pdf/Terms_and_Conditions.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+          <tr><td>Disclosure</td><td><a class="btn-dl pdf" href="pdf/Disclosure.pdf" target="_blank" rel="noopener">PDF &#8595;</a></td></tr>
+        </tbody>
       </table>
+    </div>
+
+    <!-- ===== NEW: GRIEVANCE ESCALATION MATRIX (SEBI MANDATED) ===== -->
+    <div class="doc-block">
+      <div class="doc-block-title"><h3>Investor Grievance — Escalation Matrix</h3></div>
+      <div style="overflow-x:auto">
+        <table class="complaints-table" aria-label="Investor grievance escalation matrix">
+          <caption class="sr-only">Escalation matrix for investor grievances</caption>
+          <thead>
+            <tr>
+              <th scope="col">Level</th>
+              <th scope="col">Details</th>
+              <th scope="col">Contact Person</th>
+              <th scope="col">Address</th>
+              <th scope="col">Contact No.</th>
+              <th scope="col">Email ID</th>
+              <th scope="col">Working Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Customer Care</td><td>First Level Resolution</td><td>Customer Service</td><td>Martin Burn House, 1 R.N. Mukherjee Rd., Kolkata 700001</td><td>+91 98312 07994</td><td>todisec@hotmail.com</td><td>10:00 – 18:00 (Mon–Fri)</td></tr>
+            <tr><td>Head of Customer Care</td><td>Escalation Level 1</td><td>Pawan Kumar Todi</td><td>Same as above</td><td>+91 98312 07994</td><td>pktodi@todisecurities.com</td><td>10:00 – 18:00 (Mon–Fri)</td></tr>
+            <tr><td>Compliance Officer</td><td>Escalation Level 2</td><td>Nikhil Todi</td><td>Same as above</td><td>+91 98364 00056</td><td>niktodi6@gmail.com</td><td>10:00 – 18:00 (Mon–Fri)</td></tr>
+            <tr><td>CEO</td><td>Final Escalation</td><td>Pawan Kumar Todi</td><td>Same as above</td><td>+91 98312 07994</td><td>pktodi@todisecurities.com</td><td>10:00 – 18:00 (Mon–Fri)</td></tr>
+          </tbody>
+        </table>
+        <p style="padding:14px 22px;font-size:13px;color:#374151;line-height:1.75;background:#F9FAFB;border-top:1px solid var(--border)">
+          In case not satisfied with the response, the investor may approach the concerned Stock Exchange (<a href="https://investorhelpline.nseindia.com/" target="_blank" rel="noopener">NSE</a> / <a href="https://www.bseindia.com/investors/investor_complaint_redressal.aspx" target="_blank" rel="noopener">BSE</a>) and thereafter SEBI through the <strong>SCORES 2.0</strong> portal at <a href="https://scores.sebi.gov.in/" target="_blank" rel="noopener">scores.sebi.gov.in</a>, or use the Online Dispute Resolution (ODR) portal at <a href="https://smartodr.in/" target="_blank" rel="noopener">smartodr.in</a>.
+        </p>
+      </div>
     </div>
 
     <!-- Important Links -->
     <div class="doc-block">
       <div class="doc-block-title"><h3>Important Links</h3></div>
       <table class="doc-table">
-        <tr><td>CDSL e-voting</td><td><a class="btn-dl lnk" href="https://evoting.cdslindia.com/Evoting/EvotingLogin" target="_blank">Visit &#8599;</a></td></tr>
-        <tr><td>NSDL e-voting</td><td><a class="btn-dl lnk" href="https://www.evoting.nsdl.com/" target="_blank">Visit &#8599;</a></td></tr>
-        <tr><td>SEBI</td><td><a class="btn-dl lnk" href="https://www.sebi.gov.in/" target="_blank">Visit &#8599;</a></td></tr>
-        <tr><td>NSE India</td><td><a class="btn-dl lnk" href="https://www.nseindia.com/" target="_blank">Visit &#8599;</a></td></tr>
-        <tr><td>BSE India</td><td><a class="btn-dl lnk" href="https://www.bseindia.com/" target="_blank">Visit &#8599;</a></td></tr>
-        <tr><td>CDSL</td><td><a class="btn-dl lnk" href="https://www.cdslindia.com/" target="_blank">Visit &#8599;</a></td></tr>
-        <tr><td>SMART ODR — Online Dispute Resolution</td><td><a class="btn-dl lnk" href="https://www.smartodr.in/" target="_blank">Visit &#8599;</a></td></tr>
-        <tr><td>SEBI SCORES — Complaint Portal</td><td><a class="btn-dl lnk" href="https://scores.sebi.gov.in/" target="_blank">Visit &#8599;</a></td></tr>
+        <caption class="sr-only">Important regulatory links</caption>
+        <tbody>
+          <tr><td>CDSL e-voting</td><td><a class="btn-dl lnk" href="https://evoting.cdslindia.com/Evoting/EvotingLogin" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>NSDL e-voting</td><td><a class="btn-dl lnk" href="https://www.evoting.nsdl.com/" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>SEBI</td><td><a class="btn-dl lnk" href="https://www.sebi.gov.in/" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>NSE India</td><td><a class="btn-dl lnk" href="https://www.nseindia.com/" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>BSE India</td><td><a class="btn-dl lnk" href="https://www.bseindia.com/" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>CDSL</td><td><a class="btn-dl lnk" href="https://www.cdslindia.com/" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>SMART ODR — Online Dispute Resolution</td><td><a class="btn-dl lnk" href="https://www.smartodr.in/" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>SEBI SCORES 2.0 — Complaint Portal</td><td><a class="btn-dl lnk" href="https://scores.sebi.gov.in/" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+          <tr><td>SEBI Saa₹thi (Investor App)</td><td><a class="btn-dl lnk" href="https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doSebiSaathi=yes" target="_blank" rel="noopener">Visit &#8599;</a></td></tr>
+        </tbody>
       </table>
     </div>
 
     <!-- Attention Investors Notice -->
-    <div class="investor-notice">
+    <div class="investor-notice" role="region" aria-label="Attention Investors notice">
       <h4>&#9888;&#65039; Attention Investors</h4>
       <p>1) Stock brokers can accept securities as margins from clients only by way of pledge in the depository system w.e.f September 01, 2020. 2) Update your e-mail and phone number with your stock broker / depository participant and receive OTP directly from depository on your e-mail and/or mobile number to create pledge. 3) Check your securities / MF / bonds in the consolidated account statement issued by NSDL/CDSL every month.</p>
       <p>"Prevent unauthorised transactions in your account. Update your mobile numbers/email IDs with your stock brokers. Receive information of your transactions directly from Exchange on your mobile/email at the end of the day. KYC is a one-time exercise while dealing in securities markets."</p>
-      <p>As a business we don't give stock tips, and have not authorized anyone to trade on behalf of others. If you find anyone claiming to be part of Todi Securities offering such services, please write to <a href="todisec@hotmail.com">todisec@hotmail.com</a></p>
+      <p>As a business we don't give stock tips, and have not authorized anyone to trade on behalf of others. If you find anyone claiming to be part of Todi Securities offering such services, please write to <a href="mailto:todisec@hotmail.com">todisec@hotmail.com</a></p>
+      <p><strong>Digital Accessibility:</strong> This website conforms to WCAG 2.1 Level AA. To report an accessibility issue, please write to <a href="mailto:niktodi6@gmail.com">niktodi6@gmail.com</a>. See our <a href="#" onclick="openAccessibilityStatement();return false;">Accessibility Statement</a>.</p>
     </div>
 
-    <div class="risk-banner" style="margin-bottom:40px">
+    <aside class="risk-banner" style="margin-bottom:40px" aria-label="Risk disclosures on derivatives">
       <h4>&#9888;&#65039; Risk Disclosures on Derivatives</h4>
       <ul>
         <li>9 out of 10 individual traders in equity F&amp;O Segment incurred net losses.</li>
@@ -828,33 +1116,33 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
         <li>Loss makers expended an additional 28% of net trading losses as transaction costs.</li>
         <li>Those making net trading profits incurred between 15% to 50% of such profits as transaction cost.</li>
       </ul>
-    </div>
+    </aside>
   </div>
 </div><!-- /investor -->
 
 <!-- ============================================================ CONTACT -->
-<div class="page" id="page-contact">
+<div class="page" id="page-contact" role="region" aria-label="Contact Us page">
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="breadcrumb">Home &rsaquo; <span>Contact Us</span></div>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" onclick="showPage('home');return false;">Home</a> &rsaquo; <span>Contact Us</span></nav>
       <h1>Get in Touch</h1>
     </div>
   </div>
   <div class="section">
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>We're Here to Help</h3>
+        <h2>We're Here to Help</h2>
 
         <div class="contact-detail">
-          <div class="cd-icon">&#127962;</div>
+          <div class="cd-icon" aria-hidden="true">&#127962;</div>
           <div>
             <div class="cd-label">Registered Address</div>
-            <div class="cd-value">1st Floor, Room No. 12, Martin Burn House<br>1, R.N. Mukherjee Road, Kolkata &ndash; 700001<br>West Bengal, India</div>
+            <address class="cd-value" style="font-style:normal">1st Floor, Room No. 12, Martin Burn House<br>1, R.N. Mukherjee Road, Kolkata &ndash; 700001<br>West Bengal, India</address>
           </div>
         </div>
 
         <div class="contact-detail">
-          <div class="cd-icon">&#128203;</div>
+          <div class="cd-icon" aria-hidden="true">&#128203;</div>
           <div>
             <div class="cd-label">Regulatory Details</div>
             <div class="cd-value">
@@ -865,10 +1153,42 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
         </div>
 
         <div class="contact-detail">
-          <div class="cd-icon">&#128274;</div>
+          <div class="cd-icon" aria-hidden="true">&#128100;</div>
+          <div>
+            <div class="cd-label">Compliance Officer</div>
+            <div class="cd-value">
+              Mr. Nikhil Todi (Director &amp; Compliance Officer)<br>
+              <a href="tel:+919836400056">+91 98364 00056</a> · <a href="mailto:niktodi6@gmail.com">niktodi6@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="cd-icon" aria-hidden="true">&#127970;</div>
+          <div>
+            <div class="cd-label">Chief Executive Officer (Principal Officer under PMLA)</div>
+            <div class="cd-value">
+              Mr. Pawan Kumar Todi (Managing Director &amp; CEO)<br>
+              <a href="tel:+919831207994">+91 98312 07994</a> · <a href="mailto:pktodi@todisecurities.com">pktodi@todisecurities.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="cd-icon" aria-hidden="true">&#128274;</div>
           <div>
             <div class="cd-label">Freeze / Block Trading Account</div>
             <div class="cd-value"><a href="mailto:stoptrade@todisecurities.com">stoptrade@todisecurities.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="cd-icon" aria-hidden="true">&#9851;&#65039;</div>
+          <div>
+            <div class="cd-label">Accessibility Coordinator (SEBI Circular dated 31-Jul-2025)</div>
+            <div class="cd-value">
+              Mr. Nikhil Todi · <a href="mailto:niktodi6@gmail.com">niktodi6@gmail.com</a>
+            </div>
           </div>
         </div>
 
@@ -886,31 +1206,33 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
             <a href="mailto:pktodi@todisecurities.com">pktodi@todisecurities.com</a>
           </div>
           <div class="email-pill">
-            <div class="email-dept">DIRECTOR &amp; COMPLIANCE OFFICER</div>
+            <div class="email-dept">Director &amp; Compliance Officer</div>
             <a href="mailto:niktodi6@gmail.com">niktodi6@gmail.com</a>
           </div>
         </div>
 
-        <p style="font-size:13px;color:#6B7280;margin-top:20px;line-height:1.7">For CDSL/DP related queries, please write to our DP partner Raima Equities Private Limited at <a href="mailto:essar_investorgrievences@yahoo.com" style="color:#0B1F3A">essar_investorgrievences@yahoo.com</a></p>
+        <p style="font-size:13px;color:#4B5563;margin-top:20px;line-height:1.7">For CDSL/DP related queries, please write to our DP partner Raima Equities Private Limited (CDSL DP ID: IN-DP-85-2015) at <a href="mailto:essar_investorgrievences@yahoo.com" style="color:var(--navy)">essar_investorgrievences@yahoo.com</a></p>
       </div>
 
-      <div class="form-card">
-        <h3>Send us a Message</h3>
+      <form class="form-card" id="contactForm" novalidate onsubmit="return submitContact(event)">
+        <h2>Send us a Message</h2>
         <div class="fg">
-          <label>Full Name</label>
-          <input type="text" placeholder="Your full name">
+          <label for="cf-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="cf-name" name="name" placeholder="Your full name" required aria-required="true" autocomplete="name">
+          <div class="fg-error" id="err-name">Please enter your full name.</div>
         </div>
         <div class="fg">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com">
+          <label for="cf-email">Email Address <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required aria-required="true" autocomplete="email">
+          <div class="fg-error" id="err-email">Please enter a valid email address.</div>
         </div>
         <div class="fg">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 XXXXX XXXXX">
+          <label for="cf-phone">Phone Number</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" pattern="[\+0-9\s\-]{10,15}">
         </div>
         <div class="fg">
-          <label>Subject</label>
-          <select>
+          <label for="cf-subject">Subject <span class="req" aria-hidden="true">*</span></label>
+          <select id="cf-subject" name="subject" required aria-required="true">
             <option value="">Select a topic</option>
             <option>Account Opening</option>
             <option>Trading Query</option>
@@ -918,111 +1240,165 @@ footer { background: #0B1F3A; color: #FFFFFF; padding: 56px 24px 0; }
             <option>Partnership / Franchise</option>
             <option>General Inquiry</option>
           </select>
+          <div class="fg-error" id="err-subject">Please select a topic.</div>
         </div>
         <div class="fg">
-          <label>Message</label>
-          <textarea placeholder="How can we help you?"></textarea>
+          <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="cf-message" name="message" placeholder="How can we help you?" required aria-required="true"></textarea>
+          <div class="fg-error" id="err-message">Please type your message.</div>
         </div>
-        <button class="btn-primary" style="width:100%" onclick="alert('Thank you! Please email us directly at backoffice@todisecurities.com or call +91 98312 07994.')">Send Message</button>
+        <button type="submit" class="btn-primary" style="width:100%">Send Message</button>
         <p class="form-call">Or call: <a href="tel:+919831207994">+91 98312 07994</a> &nbsp;/&nbsp; <a href="tel:+919836400056">+91 98364 00056</a></p>
-      </div>
+        <div role="status" aria-live="polite" id="formStatus" class="sr-only"></div>
+      </form>
     </div>
   </div>
 </div><!-- /contact -->
 
+</main>
+
 <!-- ============================================================ FOOTER -->
-<footer>
+<footer role="contentinfo">
   <div class="footer-inner">
     <div>
       <div class="footer-logo">
-        <div class="footer-logo-icon">T</div>
+        <div class="footer-logo-icon" aria-hidden="true">T</div>
         <div>
           <div class="footer-logo-name">Todi Securities</div>
           <div class="footer-logo-tag">Private Limited</div>
         </div>
       </div>
       <p class="footer-desc">Member of NSE (TM ID &ndash; 11900) &amp; BSE (TM ID &ndash; 6136). SEBI Reg.: INZ000214535. 1, R.N. Mukherjee Road, Martin Burn House, 1st Floor, Room 12, Kolkata &ndash; 700001.</p>
-      <div class="footer-social">
-        <a href="https://in.linkedin.com/company/todi-securities" target="_blank">in</a>
-        <a href="#">f</a>
-        <a href="#">X</a>
-        <a href="#">&#128247;</a>
+      <div class="footer-social" aria-label="Social media links">
+        <a href="https://in.linkedin.com/company/todi-securities" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="Instagram">&#128247;</a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Company</h4>
+    <nav class="footer-col" aria-label="Company links">
+      <h3>Company</h3>
       <ul>
-        <li><a onclick="showPage('about')">About Us</a></li>
-        <li><a onclick="showPage('services')">Services</a></li>
-        <li><a onclick="showPage('services')">Pricing</a></li>
+        <li><button onclick="showPage('about')">About Us</button></li>
+        <li><button onclick="showPage('services')">Services</button></li>
+        <li><button onclick="showPage('services')">Pricing</button></li>
         <li><a href="mailto:todisec@hotmail.com">Become a Partner</a></li>
       </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Support</h4>
+    </nav>
+    <nav class="footer-col" aria-label="Support links">
+      <h3>Support</h3>
       <ul>
-        <li><a onclick="showPage('contact')">Contact Us</a></li>
-        <li><a onclick="showPage('investor')">Investor Corner</a></li>
-        <li><a href="https://scores.sebi.gov.in/" target="_blank">SEBI SCORES</a></li>
-        <li><a href="https://smartodr.in/" target="_blank">Smart ODR</a></li>
+        <li><button onclick="showPage('contact')">Contact Us</button></li>
+        <li><button onclick="showPage('investor')">Investor Corner</button></li>
+        <li><a href="https://scores.sebi.gov.in/" target="_blank" rel="noopener">SEBI SCORES 2.0</a></li>
+        <li><a href="https://smartodr.in/" target="_blank" rel="noopener">Smart ODR</a></li>
+        <li><a href="#" onclick="openAccessibilityStatement();return false;">Accessibility Statement</a></li>
       </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Account</h4>
+    </nav>
+    <nav class="footer-col" aria-label="Account links">
+      <h3>Account</h3>
       <ul>
-        <li><a href="https://www.todisecurities.com/pdf/FINAL2_Account_Opening_Todi.pdf" target="_blank">Open Account</a></li>
-        <li><a href="https://www.todisecurities.com/pdf/FINAL2_Account_Closure_Todi.pdf" target="_blank">Account Closure</a></li>
+        <li><a href="https://www.todisecurities.com/pdf/FINAL2_Account_Opening_Todi.pdf" target="_blank" rel="noopener">Open Account</a></li>
+        <li><a href="https://www.todisecurities.com/pdf/FINAL2_Account_Closure_Todi.pdf" target="_blank" rel="noopener">Account Closure</a></li>
         <li><a href="mailto:stoptrade@todisecurities.com">Freeze Account</a></li>
         <li><a href="#" onclick="noFile(event)">Back Office Login</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
 
   <div class="footer-bottom">
     <div class="footer-links">
-      <a href="https://nseindia.com/" target="_blank">NSE</a>
-      <a href="https://www.bseindia.com/" target="_blank">BSE</a>
-      <a href="https://www.todisecurities.com/pdf/Policies_&_Procedures.pdf" target="_blank">Policies &amp; Procedures</a>
-      <a href="https://www.todisecurities.com/pdf/Terms_and_Conditions.pdf" target="_blank">Terms &amp; Conditions</a>
-      <a href="https://www.todisecurities.com/pdf/Disclosure.pdf" target="_blank">Disclosure</a>
-      <a href="https://www.todisecurities.com/pdf/Investor-Charter.pdf" target="_blank">Investor Charter</a>
-      <a href="https://smartodr.in/" target="_blank">Smart ODR</a>
+      <a href="https://nseindia.com/" target="_blank" rel="noopener">NSE</a>
+      <a href="https://www.bseindia.com/" target="_blank" rel="noopener">BSE</a>
+      <a href="https://www.cdslindia.com/" target="_blank" rel="noopener">CDSL</a>
+      <a href="https://www.sebi.gov.in/" target="_blank" rel="noopener">SEBI</a>
+      <a href="https://www.todisecurities.com/pdf/Policies_&_Procedures.pdf" target="_blank" rel="noopener">Policies &amp; Procedures</a>
+      <a href="https://www.todisecurities.com/pdf/Terms_and_Conditions.pdf" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+      <a href="https://www.todisecurities.com/pdf/Disclosure.pdf" target="_blank" rel="noopener">Disclosure</a>
+      <a href="https://www.todisecurities.com/pdf/Investor-Charter.pdf" target="_blank" rel="noopener">Investor Charter</a>
+      <a href="https://smartodr.in/" target="_blank" rel="noopener">Smart ODR</a>
+      <a href="https://scores.sebi.gov.in/" target="_blank" rel="noopener">SCORES 2.0</a>
     </div>
     <div class="footer-legal">
-      <p>CDSL: Depository services through Raima Equities Private Limited &ndash; SEBI Reg.: IN-DP-85-2015. For any complaints pertaining to securities broking please write to <a href="mailto:investorgrievances@todisecurities.com">investorgrievances@todisecurities.com</a>. Investments in securities market are subject to market risks; read all the related documents carefully before investing.</p>
-      <p style="margin-top:8px">&copy; 2025 Todi Securities Private Limited. All rights reserved.</p>
+      <p>CDSL: Depository services through Raima Equities Private Limited &ndash; SEBI Reg.: IN-DP-85-2015. For any complaints pertaining to securities broking please write to <a href="mailto:investorgrievances@todisecurities.com">investorgrievances@todisecurities.com</a>. Investments in securities market are subject to market risks; read all the related documents carefully before investing. <em>Issued in the interest of investors.</em></p>
+      <p style="margin-top:8px"><strong>Standard Warning:</strong> No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. No worries for refund as the money remains in investor's account.</p>
+      <p style="margin-top:8px">&copy; 2025 Todi Securities Private Limited. All rights reserved. &nbsp;|&nbsp; This website conforms to <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Level AA &amp; SEBI Digital Accessibility Circular dated July 31, 2025.</p>
     </div>
   </div>
 </footer>
 
-<!-- Risk Popup -->
-<div class="risk-overlay" id="riskOverlay">
+<!-- ============================================================ RISK POPUP ============================================================ -->
+<div class="risk-overlay" id="riskOverlay" role="dialog" aria-modal="true" aria-labelledby="risk-popup-title" aria-describedby="risk-popup-body">
   <div class="risk-popup">
-    <h2>&#9888;&#65039; Risk Disclosures on Derivatives</h2>
-    <ul>
-      <li>9 out of 10 individual traders in equity Futures and Options Segment incurred net losses.</li>
-      <li>On average, loss makers registered net trading loss close to &#8377;50,000.</li>
-      <li>Over and above the net trading losses, loss makers expended an additional 28% of net trading losses as transaction costs.</li>
-      <li>Those making net trading profits incurred between 15% to 50% of such profits as transaction cost.</li>
-    </ul>
-    <p class="src">Source: SEBI study dated January 25, 2023 on "Analysis of Profit and Loss of Individual Traders dealing in equity F&amp;O Segment", FY 2021-22.</p>
-    <p class="body-note">Investments in securities market are subject to market risks; read all the related documents carefully before investing.</p>
-    <button class="risk-close" onclick="document.getElementById('riskOverlay').classList.remove('show')">I Understand &mdash; Continue</button>
+    <button type="button" class="risk-x" onclick="closeRiskPopup()" aria-label="Close risk disclosure dialog">&times;</button>
+    <h2 id="risk-popup-title">&#9888;&#65039; Risk Disclosures on Derivatives</h2>
+    <div id="risk-popup-body">
+      <ul>
+        <li>9 out of 10 individual traders in equity Futures and Options Segment incurred net losses.</li>
+        <li>On average, loss makers registered net trading loss close to &#8377;50,000.</li>
+        <li>Over and above the net trading losses, loss makers expended an additional 28% of net trading losses as transaction costs.</li>
+        <li>Those making net trading profits incurred between 15% to 50% of such profits as transaction cost.</li>
+      </ul>
+      <p class="src">Source: SEBI study dated January 25, 2023 on "Analysis of Profit and Loss of Individual Traders dealing in equity F&amp;O Segment", FY 2021-22.</p>
+      <p class="body-note">Investments in securities market are subject to market risks; read all the related documents carefully before investing.</p>
+    </div>
+    <button type="button" class="risk-close" onclick="closeRiskPopup()">I Understand &mdash; Continue</button>
+  </div>
+</div>
+
+<!-- ============================================================ ACCESSIBILITY STATEMENT DIALOG ============================================================ -->
+<div class="risk-overlay" id="accStatement" role="dialog" aria-modal="true" aria-labelledby="acc-statement-title">
+  <div class="risk-popup">
+    <button type="button" class="risk-x" onclick="closeAccessibilityStatement()" aria-label="Close accessibility statement">&times;</button>
+    <h2 id="acc-statement-title">Accessibility Statement</h2>
+    <p style="font-size:14px;color:#374151;line-height:1.75;margin-bottom:14px">
+      Todi Securities Private Limited is committed to ensuring digital accessibility for persons with disabilities, in compliance with the <strong>Rights of Persons with Disabilities Act, 2016</strong>, the Hon'ble Supreme Court judgment dated April 30, 2025, and SEBI Circular Nos. SEBI/HO/ITD-1/ITD_VIAP/P/CIR/2025/111 (dated 31-Jul-2025) and SEBI/HO/ITD-1/ITD_VIAP/P/CIR/2025/131 (dated 25-Sep-2025).
+    </p>
+    <p style="font-size:14px;color:#374151;line-height:1.75;margin-bottom:14px">
+      <strong>Standards followed:</strong> WCAG 2.1 Level AA, GIGW (Guidelines for Indian Government Websites) and IS 17802:2022.
+    </p>
+    <p style="font-size:14px;color:#374151;line-height:1.75;margin-bottom:14px">
+      <strong>Features provided:</strong> keyboard navigation, screen-reader compatible markup, skip-to-content link, font resizing, high-contrast and invert modes, link highlighting, text spacing &amp; line-height adjustment, big cursor, image hide mode, and a persistent accessibility toolbar across all pages.
+    </p>
+    <p style="font-size:14px;color:#374151;line-height:1.75;margin-bottom:14px">
+      <strong>Accessibility Coordinator:</strong> Mr. Nikhil Todi (Director &amp; Compliance Officer) — <a href="mailto:niktodi6@gmail.com">niktodi6@gmail.com</a> · <a href="tel:+919836400056">+91 98364 00056</a>
+    </p>
+    <p style="font-size:13px;color:#6B7280;line-height:1.7;font-style:italic">
+      An initial accessibility audit by an IAAP-certified professional is scheduled in accordance with the timelines prescribed under the SEBI compliance guidelines dated 25-Sep-2025. Audit reports will be available on this page once finalised.
+    </p>
+    <button type="button" class="risk-close" onclick="closeAccessibilityStatement()">Close</button>
   </div>
 </div>
 
 <script>
+/* =========================================================
+   CORE PAGE NAVIGATION (now accessible, no anchor abuse)
+   ========================================================= */
 function showPage(id) {
   document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
-  document.getElementById('page-' + id).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(function(a){ a.classList.remove('active'); });
+  var target = document.getElementById('page-' + id);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.nav-links button, .nav-links a').forEach(function(a){
+    a.classList.remove('active');
+    a.removeAttribute('aria-current');
+  });
   var el = document.getElementById('nav-' + id);
-  if (el) el.classList.add('active');
+  if (el) { el.classList.add('active'); el.setAttribute('aria-current', 'page'); }
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Move focus to main content for screen readers
+  var main = document.getElementById('main-content');
+  if (main) main.focus({ preventScroll: true });
 }
 
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
 function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
+  var menu = document.getElementById('mobileMenu');
+  var btn  = document.querySelector('.hamburger');
+  var isOpen = menu.classList.toggle('open');
+  menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
 
 function noFile(e) {
@@ -1030,11 +1406,216 @@ function noFile(e) {
   alert('This file will be available once uploaded to the server. Please contact todisec@hotmail.com for the document.');
 }
 
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    document.getElementById('riskOverlay').classList.add('show');
-  }, 1000);
+/* =========================================================
+   RISK POPUP (now keyboard-trapped, ESC closes, remembers)
+   ========================================================= */
+var lastFocusedBeforeDialog = null;
+
+function openRiskPopup() {
+  lastFocusedBeforeDialog = document.activeElement;
+  var ov = document.getElementById('riskOverlay');
+  ov.classList.add('show');
+  // Focus the close button
+  setTimeout(function(){
+    var x = ov.querySelector('.risk-close');
+    if (x) x.focus();
+  }, 60);
+}
+function closeRiskPopup() {
+  var ov = document.getElementById('riskOverlay');
+  ov.classList.remove('show');
+  try { sessionStorage.setItem('todi_risk_seen', '1'); } catch (e) {}
+  if (lastFocusedBeforeDialog) lastFocusedBeforeDialog.focus();
+}
+
+function openAccessibilityStatement() {
+  lastFocusedBeforeDialog = document.activeElement;
+  var ov = document.getElementById('accStatement');
+  ov.classList.add('show');
+  setTimeout(function(){
+    var x = ov.querySelector('.risk-close');
+    if (x) x.focus();
+  }, 60);
+}
+function closeAccessibilityStatement() {
+  document.getElementById('accStatement').classList.remove('show');
+  if (lastFocusedBeforeDialog) lastFocusedBeforeDialog.focus();
+}
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') {
+    var ro = document.getElementById('riskOverlay');
+    var as = document.getElementById('accStatement');
+    if (ro.classList.contains('show')) closeRiskPopup();
+    if (as.classList.contains('show')) closeAccessibilityStatement();
+    var ap = document.getElementById('acc-panel');
+    if (ap.classList.contains('open')) toggleAccPanel(false);
+  }
 });
+
+// Show risk popup only on first session visit (was: every page load)
+window.addEventListener('load', function() {
+  try {
+    if (!sessionStorage.getItem('todi_risk_seen')) {
+      setTimeout(openRiskPopup, 1200);
+    }
+  } catch (e) {
+    setTimeout(openRiskPopup, 1200);
+  }
+});
+
+/* =========================================================
+   CONTACT FORM VALIDATION
+   ========================================================= */
+function submitContact(e) {
+  e.preventDefault();
+  var f = document.getElementById('contactForm');
+  var ok = true;
+  function check(id, errId, test) {
+    var el = document.getElementById(id);
+    var fg = el.closest('.fg');
+    var valid = test(el.value.trim());
+    fg.classList.toggle('has-error', !valid);
+    if (!valid) ok = false;
+  }
+  check('cf-name', 'err-name', function(v){ return v.length >= 2; });
+  check('cf-email', 'err-email', function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); });
+  check('cf-subject', 'err-subject', function(v){ return !!v; });
+  check('cf-message', 'err-message', function(v){ return v.length >= 5; });
+
+  var status = document.getElementById('formStatus');
+  if (!ok) {
+    status.textContent = 'Form has errors. Please review the highlighted fields.';
+    var firstErr = f.querySelector('.fg.has-error input, .fg.has-error textarea, .fg.has-error select');
+    if (firstErr) firstErr.focus();
+    return false;
+  }
+  status.textContent = 'Message ready to send.';
+  alert('Thank you! Please email us directly at todisec@hotmail.com or call +91 98312 07994.');
+  return false;
+}
+
+/* =========================================================
+   ACCESSIBILITY TOOLBAR  (replica of SC of India)
+   ========================================================= */
+(function(){
+  var panel = document.getElementById('acc-panel');
+  var toggleBtn = document.getElementById('acc-panel-toggle');
+
+  function toggleAccPanel(force) {
+    var open = (typeof force === 'boolean') ? force : !panel.classList.contains('open');
+    panel.classList.toggle('open', open);
+    toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  window.toggleAccPanel = toggleAccPanel;
+
+  toggleBtn.addEventListener('click', function(){ toggleAccPanel(); });
+
+  // Close panel when clicking outside
+  document.addEventListener('click', function(e){
+    if (!panel.classList.contains('open')) return;
+    if (panel.contains(e.target) || toggleBtn.contains(e.target)) return;
+    toggleAccPanel(false);
+  });
+
+  // Sitemap, feedback, search wiring (graceful fallbacks)
+  document.getElementById('acc-search-toggle').addEventListener('click', function(){
+    var q = prompt('Search Todi Securities — enter a keyword (e.g. "MITC", "F&O", "complaint"):');
+    if (q && q.trim()) {
+      // simple in-page search
+      var t = q.trim().toLowerCase();
+      var sections = ['home','about','services','investor','contact'];
+      for (var i=0;i<sections.length;i++) {
+        if (document.getElementById('page-'+sections[i]).innerText.toLowerCase().indexOf(t) >= 0) {
+          showPage(sections[i]);
+          alert('Term found on the "'+sections[i].toUpperCase()+'" page. Use Ctrl+F to locate it.');
+          return;
+        }
+      }
+      alert('No matches found. Please try a different keyword.');
+    }
+  });
+  document.getElementById('acc-feedback-toggle').addEventListener('click', function(){
+    window.location.href = 'mailto:niktodi6@gmail.com?subject=Website%20Feedback';
+  });
+  document.getElementById('acc-sitemap-toggle').addEventListener('click', function(){
+    alert('Sitemap:\n• Home\n• About Us\n• Services\n• Investor Corner\n• Contact Us\n• Accessibility Statement');
+  });
+  document.getElementById('acc-lang-toggle').addEventListener('click', function(){
+    alert('Regional-language KYC documents are available on the Investor Corner page. Full multi-language site is under development.');
+    showPage('investor');
+  });
+
+  // === Tile toggles ===
+  var tiles = document.querySelectorAll('.acc-tile');
+  var fontSteps = [0.9, 1, 1.15, 1.3];
+  var fontIdx = 1; // start at 'Normal'
+
+  function applyState(state) {
+    document.body.classList.toggle('acc-high-contrast', !!state.highContrast);
+    document.body.classList.toggle('acc-invert',        !!state.invert);
+    document.body.classList.toggle('acc-highlight-links', !!state.highlightLinks);
+    document.body.classList.toggle('acc-hide-images',   !!state.hideImages);
+    document.body.classList.toggle('acc-big-cursor',    !!state.bigCursor);
+    document.documentElement.style.setProperty('--acc-saturation', state.saturation || 1);
+    document.documentElement.style.setProperty('--acc-font-scale', fontSteps[state.fontIdx]);
+    document.documentElement.style.setProperty('--acc-letter-spacing', state.textSpacing ? '0.08em' : '0');
+    document.documentElement.style.setProperty('--acc-line-height', state.lineHeight ? '2.1' : '1.6');
+    try { localStorage.setItem('todi_acc', JSON.stringify(state)); } catch(e) {}
+    // Update pressed states & checks
+    tiles.forEach(function(t){
+      var m = t.getAttribute('data-mode');
+      var pressed = false;
+      if (m === 'high-contrast') pressed = !!state.highContrast;
+      else if (m === 'normal-contrast') pressed = !state.highContrast;
+      else if (m === 'highlight-links') pressed = !!state.highlightLinks;
+      else if (m === 'invert') pressed = !!state.invert;
+      else if (m === 'saturation') pressed = (state.saturation !== 1);
+      else if (m === 'font-up') pressed = (state.fontIdx > 1);
+      else if (m === 'font-down') pressed = (state.fontIdx < 1);
+      else if (m === 'font-normal') pressed = (state.fontIdx === 1);
+      else if (m === 'text-spacing') pressed = !!state.textSpacing;
+      else if (m === 'line-height') pressed = !!state.lineHeight;
+      else if (m === 'hide-images') pressed = !!state.hideImages;
+      else if (m === 'big-cursor') pressed = !!state.bigCursor;
+      t.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    });
+  }
+
+  var state = { highContrast:false, invert:false, highlightLinks:false, hideImages:false, bigCursor:false, saturation:1, fontIdx:1, textSpacing:false, lineHeight:false };
+  try {
+    var saved = localStorage.getItem('todi_acc');
+    if (saved) state = Object.assign(state, JSON.parse(saved));
+  } catch(e) {}
+  applyState(state);
+
+  tiles.forEach(function(tile){
+    tile.addEventListener('click', function(){
+      var m = tile.getAttribute('data-mode');
+      switch (m) {
+        case 'high-contrast': state.highContrast = true; state.invert = false; break;
+        case 'normal-contrast': state.highContrast = false; state.invert = false; break;
+        case 'highlight-links': state.highlightLinks = !state.highlightLinks; break;
+        case 'invert': state.invert = !state.invert; state.highContrast = false; break;
+        case 'saturation': state.saturation = (state.saturation === 1) ? 0 : (state.saturation === 0 ? 1.6 : 1); break;
+        case 'font-up': state.fontIdx = Math.min(state.fontIdx + 1, fontSteps.length - 1); break;
+        case 'font-down': state.fontIdx = Math.max(state.fontIdx - 1, 0); break;
+        case 'font-normal': state.fontIdx = 1; break;
+        case 'text-spacing': state.textSpacing = !state.textSpacing; break;
+        case 'line-height': state.lineHeight = !state.lineHeight; break;
+        case 'hide-images': state.hideImages = !state.hideImages; break;
+        case 'big-cursor': state.bigCursor = !state.bigCursor; break;
+      }
+      applyState(state);
+    });
+  });
+
+  document.getElementById('acc-reset').addEventListener('click', function(){
+    state = { highContrast:false, invert:false, highlightLinks:false, hideImages:false, bigCursor:false, saturation:1, fontIdx:1, textSpacing:false, lineHeight:false };
+    applyState(state);
+    try { localStorage.removeItem('todi_acc'); } catch(e) {}
+  });
+})();
 </script>
 </body>
 </html>
